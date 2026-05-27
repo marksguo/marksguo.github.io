@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Marks Guo — Statistics &amp; Finance</title>
+<meta name="description" content="Marks Guo — junior at the University of Rochester studying Statistics & Finance. Quantitative research, risk modeling, and labor market analytics." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ambient layers -->
+<div class="cursor-glow" aria-hidden="true"></div>
+<div class="aurora" aria-hidden="true">
+  <div class="aurora-blob a"></div>
+  <div class="aurora-blob b"></div>
+  <div class="aurora-blob c"></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ticker -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="t-item"><i class="up"></i> python <strong>+0.42%</strong></span>
+    <span class="t-item"><i class="up"></i> postgresql <strong>+1.14%</strong></span>
+    <span class="t-item"><i class="dn"></i> u-3 <strong>4.3%</strong></span>
+    <span class="t-item"><i class="up"></i> u-6 <strong>8.2%</strong></span>
+    <span class="t-item"><i class="up"></i> bayesian/mcmc <strong>+psrf 1.0</strong></span>
+    <span class="t-item"><i class="dn"></i> temp.helps <strong>−21.4%</strong></span>
+    <span class="t-item"><i class="up"></i> rochester <strong>3.70 gpa</strong></span>
+    <span class="t-item"><i class="up"></i> tableau <strong>live</strong></span>
+    <span class="t-item"><i class="up"></i> sql <strong>+window.fns</strong></span>
+    <span class="t-item"><i class="up"></i> r/lang <strong>+stats</strong></span>
+    <span class="t-item"><i class="up"></i> dcf/wacc/capm <strong>active</strong></span>
+    <span class="t-item"><i class="dn"></i> sleep <strong>−4h</strong></span>
+    <!-- duplicate for seamless loop -->
+    <span class="t-item"><i class="up"></i> python <strong>+0.42%</strong></span>
+    <span class="t-item"><i class="up"></i> postgresql <strong>+1.14%</strong></span>
+    <span class="t-item"><i class="dn"></i> u-3 <strong>4.3%</strong></span>
+    <span class="t-item"><i class="up"></i> u-6 <strong>8.2%</strong></span>
+    <span class="t-item"><i class="up"></i> bayesian/mcmc <strong>+psrf 1.0</strong></span>
+    <span class="t-item"><i class="dn"></i> temp.helps <strong>−21.4%</strong></span>
+    <span class="t-item"><i class="up"></i> rochester <strong>3.70 gpa</strong></span>
+    <span class="t-item"><i class="up"></i> tableau <strong>live</strong></span>
+    <span class="t-item"><i class="up"></i> sql <strong>+window.fns</strong></span>
+    <span class="t-item"><i class="up"></i> r/lang <strong>+stats</strong></span>
+    <span class="t-item"><i class="up"></i> dcf/wacc/capm <strong>active</strong></span>
+    <span class="t-item"><i class="dn"></i> sleep <strong>−4h</strong></span>
+  </div>
+</div>
+
+<!-- nav -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <span class="brand-mark">MG</span>
+      <span class="brand-name">marks_guo</span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about" data-section="about">about</a>
+      <a href="#projects" data-section="projects">work</a>
+      <a href="#skills" data-section="skills">skills</a>
+      <a href="#experience" data-section="experience">experience</a>
+      <a href="#contact" data-section="contact">contact</a>
+      <span class="nav-indicator" id="navIndicator"></span>
+    </nav>
+    <a href="assets/Marks_Guo_Resume.pdf" class="nav-cta" target="_blank" rel="noopener">
+      <span>resume.pdf</span>
+      <span class="arrow">&darr;</span>
+    </a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-content">
+
+        <div class="hero-eyebrow">
+          <span class="pulse-dot"></span>
+          <span class="reveal">open to <strong>summer 2026 internships</strong></span>
+          <span class="dot-sep">&middot;</span>
+          <span class="reveal">Charlotte, NC</span>
+        </div>
+
+        <h1 class="hero-name">
+          <span class="word reveal-up">Marks</span>
+          <span class="word reveal-up gradient" style="--d: .08s">Guo.</span>
+        </h1>
+
+        <div class="hero-rotator reveal-up" style="--d: .16s">
+          <span class="rotator-fixed">building </span>
+          <span class="rotator-wrap" aria-hidden="true">
+            <ul class="rotator-list" id="rotator">
+              <li>quantitative research.</li>
+              <li>risk models.</li>
+              <li>labor analytics.</li>
+              <li>Bayesian inference.</li>
+              <li>equity valuations.</li>
+            </ul>
+          </span>
+        </div>
+
+        <p class="hero-lede reveal-up" style="--d: .24s">
+          Junior at the <em>University of Rochester</em> studying Statistics &amp; Finance.
+          I turn messy time series into decisions you can defend &mdash; from
+          volatility modeling on 4,800+ daily S&amp;P returns to a live PostgreSQL
+          pipeline tracking the 14 series that actually move the labor market.
+        </p>
+
+        <div class="hero-stats reveal-up" style="--d: .32s">
+          <div class="stat">
+            <span class="stat-num" data-target="3.70" data-decimals="2">0.00</span>
+            <span class="stat-lab">GPA / 4.00</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-target="4800" data-suffix="+">0</span>
+            <span class="stat-lab">daily returns modeled</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-target="14">0</span>
+            <span class="stat-lab">FRED series in pipeline</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-target="4">0</span>
+            <span class="stat-lab">languages spoken</span>
+          </div>
+        </div>
+
+        <div class="hero-cta reveal-up" style="--d: .40s">
+          <a href="#projects" class="btn primary magnetic">
+            browse projects
+            <span class="btn-arrow">&rarr;</span>
+          </a>
+          <a href="mailto:marksguo2005@gmail.com" class="btn ghost magnetic">
+            get in touch
+          </a>
+        </div>
+
+      </div>
+
+      <!-- hero sigil: animated stylized return / volatility curve -->
+      <div class="hero-sigil reveal-up" style="--d: .48s" aria-hidden="true">
+        <svg viewBox="0 0 360 360" class="sigil-svg">
+          <defs>
+            <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%"  stop-color="#8b80ff"/>
+              <stop offset="50%" stop-color="#ff7e6b"/>
+              <stop offset="100%" stop-color="#e8b563"/>
+            </linearGradient>
+            <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#8b80ff" stop-opacity=".25"/>
+              <stop offset="100%" stop-color="#8b80ff" stop-opacity="0"/>
+            </linearGradient>
+            <filter id="glow"><feGaussianBlur stdDeviation="2.4"/></filter>
+          </defs>
+
+          <!-- grid -->
+          <g class="sigil-grid" stroke="#1f1d2e" stroke-width="1">
+            <line x1="0"   y1="60"  x2="360" y2="60"/>
+            <line x1="0"   y1="120" x2="360" y2="120"/>
+            <line x1="0"   y1="180" x2="360" y2="180"/>
+            <line x1="0"   y1="240" x2="360" y2="240"/>
+            <line x1="0"   y1="300" x2="360" y2="300"/>
+            <line x1="60"  y1="0"   x2="60"  y2="360"/>
+            <line x1="120" y1="0"   x2="120" y2="360"/>
+            <line x1="180" y1="0"   x2="180" y2="360"/>
+            <line x1="240" y1="0"   x2="240" y2="360"/>
+            <line x1="300" y1="0"   x2="300" y2="360"/>
+          </g>
+
+          <!-- volatility band -->
+          <path d="M 10 180 Q 50 160, 80 175 T 150 168 T 220 155 T 290 142 T 350 128 L 350 232 Q 290 218, 220 225 T 80 245 T 10 240 Z"
+                fill="url(#fillGrad)"/>
+
+          <!-- main line, dashed for drawing animation -->
+          <path id="sigilLine"
+                d="M 10 240
+                   Q 40 200, 60 210
+                   T 100 180
+                   Q 130 150, 150 195
+                   T 200 130
+                   Q 230 100, 250 155
+                   T 300 90
+                   Q 330 65, 350 80"
+                fill="none"
+                stroke="url(#lineGrad)"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                filter="url(#glow)"/>
+          <path d="M 10 240
+                   Q 40 200, 60 210
+                   T 100 180
+                   Q 130 150, 150 195
+                   T 200 130
+                   Q 230 100, 250 155
+                   T 300 90
+                   Q 330 65, 350 80"
+                fill="none"
+                stroke="url(#lineGrad)"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"/>
+
+          <!-- key data dots -->
+          <g class="sigil-dots">
+            <circle cx="100" cy="180" r="3" fill="#8b80ff"/>
+            <circle cx="200" cy="130" r="3" fill="#ff7e6b"/>
+            <circle cx="300" cy="90"  r="3.5" fill="#e8b563"/>
+          </g>
+
+          <!-- corner labels -->
+          <g class="sigil-labels" font-family="JetBrains Mono, monospace" font-size="9" fill="#6a647c">
+            <text x="10"  y="20">σ(returns)</text>
+            <text x="10"  y="350">2007</text>
+            <text x="320" y="350">2026</text>
+            <text x="280" y="80" fill="#e8b563">+vol</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <!-- scroll cue -->
+    <div class="scroll-cue" aria-hidden="true">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <header class="section-head">
+        <span class="section-num">/ 01</span>
+        <h2 class="section-h"><span class="hash">#</span> about</h2>
+      </header>
+
+      <div class="two-col">
+        <div class="prose">
+          <p class="lead">
+            I'm a junior at the <strong>University of Rochester</strong> pursuing a
+            double major in <strong>Statistics</strong> and <strong>Finance</strong>,
+            with a Certificate in Actuarial Studies in progress and a place on the
+            Dean's List every semester.
+          </p>
+          <p>
+            My work sits at the intersection of quantitative methods and capital
+            markets &mdash; Bayesian inference, regression diagnostics, financial
+            statement analysis, and the kind of careful data engineering that lets
+            a model actually be trusted.
+          </p>
+          <p>
+            I like running research projects end-to-end: from raw FRED pulls and
+            PostgreSQL schemas, through diagnostics and convergence checks, to
+            published Tableau dashboards and equity research write-ups. The boring
+            plumbing is half the work, and where most analyses quietly go wrong.
+          </p>
+
+          <div class="now-box">
+            <span class="now-label">/ currently</span>
+            <ul class="now-list">
+              <li><span class="dot c1"></span> shipping the live <em>Beyond U-3</em> labor dashboard</li>
+              <li><span class="dot c2"></span> extending SPY volatility work into a GARCH(1,1) baseline</li>
+              <li><span class="dot c3"></span> reading <em>Hull</em> &middot; <em>Bayesian Data Analysis</em> (Gelman)</li>
+              <li><span class="dot c4"></span> studying for the SOA Exam P</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="profile-card">
+          <div class="card-head">
+            <span class="card-mark">MG</span>
+            <div>
+              <div class="card-title">Marks Guo</div>
+              <div class="card-sub">stats &middot; finance &middot; rochester '27</div>
+            </div>
+          </div>
+          <div class="card-row"><span class="card-k">school</span><span class="card-v">U. of Rochester</span></div>
+          <div class="card-row"><span class="card-k">grad</span><span class="card-v">June 2027</span></div>
+          <div class="card-row"><span class="card-k">major</span><span class="card-v">B.S. Statistics</span></div>
+          <div class="card-row"><span class="card-k">major</span><span class="card-v">B.S. Finance</span></div>
+          <div class="card-row"><span class="card-k">gpa</span><span class="card-v">3.70 / 4.00</span></div>
+          <div class="card-row"><span class="card-k">cert.</span><span class="card-v">Actuarial Studies <em>(WIP)</em></span></div>
+          <div class="card-row"><span class="card-k">location</span><span class="card-v">Charlotte, NC</span></div>
+          <div class="card-row"><span class="card-k">languages</span><span class="card-v">EN &middot; ZH &middot; YUE &middot; FZ</span></div>
+          <div class="card-row"><span class="card-k">status</span><span class="card-v"><span class="pulse-dot mini"></span> recruiting</span></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section alt">
+    <div class="container">
+      <header class="section-head">
+        <span class="section-num">/ 02</span>
+        <h2 class="section-h"><span class="hash">#</span> selected work</h2>
+        <p class="section-sub">Independent research &mdash; full pipeline, code, and write-up on each.</p>
+      </header>
+
+      <!-- 01 Labor Dashboard -->
+      <article class="project" style="--accent: #8b80ff; --accent-soft: rgba(139,128,255,.14);">
+        <div class="project-glow"></div>
+        <header class="project-head">
+          <div class="project-headl">
+            <span class="project-num">01 / labor</span>
+            <h3>Beyond U-3: Labor Market Dashboard</h3>
+            <p class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Tableau</span>
+              <span class="tag">FRED API</span>
+              <span class="tag">SQLAlchemy</span>
+            </p>
+          </div>
+          <span class="project-when">May 2026 &mdash; current</span>
+        </header>
+
+        <p class="project-desc">
+          An automated macro dashboard that quantifies how the official U-3
+          unemployment rate <em>systematically understates</em> labor market
+          stress &mdash; and tracks the leading indicators that actually signal
+          turning points.
+        </p>
+
+        <div class="project-body">
+          <ul class="project-points">
+            <li>Designed a normalized PostgreSQL database storing <b>14 FRED time series</b> across 30+ years of U.S. labor data.</li>
+            <li>Quantified U-3 understates labor stress by <b>4.42 pts</b> in normal periods, <b>5.37 pts</b> in the Great Recession.</li>
+            <li>Built a Python pipeline (FRED + pandas + SQLAlchemy) resampling mixed-frequency series and computing derived metrics live.</li>
+            <li>Scheduled monthly via Windows Task Scheduler &mdash; production database, zero manual refresh.</li>
+            <li>Tracks 8 leading indicators including temp help (<b>−21.4%</b> from peak), quits rate, 10Y&ndash;2Y spread, saving rate.</li>
+          </ul>
+
+          <!-- mini live-snapshot chart -->
+          <div class="project-viz">
+            <div class="viz-head">
+              <span class="viz-title">snapshot &middot; apr 2026</span>
+              <span class="viz-dot">●&nbsp;live</span>
+            </div>
+
+            <!-- inline SVG sparkline: U-3 vs U-6 -->
+            <div class="spark-wrap">
+              <div class="spark-row">
+                <span class="spark-lab">U-3</span>
+                <svg class="spark" viewBox="0 0 200 40" preserveAspectRatio="none">
+                  <path class="spark-path c-blue" d="M0,28 L18,26 L36,24 L54,22 L72,24 L90,28 L108,30 L126,29 L144,28 L162,26 L180,24 L200,22"/>
+                </svg>
+                <span class="spark-val">4.3%</span>
+              </div>
+              <div class="spark-row">
+                <span class="spark-lab">U-6</span>
+                <svg class="spark" viewBox="0 0 200 40" preserveAspectRatio="none">
+                  <path class="spark-path c-coral" d="M0,20 L18,18 L36,16 L54,15 L72,17 L90,22 L108,24 L126,22 L144,20 L162,17 L180,15 L200,12"/>
+                </svg>
+                <span class="spark-val">8.2%</span>
+              </div>
+              <div class="spark-row">
+                <span class="spark-lab">temp.helps</span>
+                <svg class="spark" viewBox="0 0 200 40" preserveAspectRatio="none">
+                  <path class="spark-path c-amber" d="M0,8 L20,6 L40,5 L60,7 L80,12 L100,18 L120,22 L140,26 L160,30 L180,33 L200,34"/>
+                </svg>
+                <span class="spark-val warn">−21.4%</span>
+              </div>
+              <div class="spark-row">
+                <span class="spark-lab">yield 10y−2y</span>
+                <svg class="spark" viewBox="0 0 200 40" preserveAspectRatio="none">
+                  <path class="spark-path c-mint" d="M0,18 L25,15 L50,18 L75,25 L100,32 L125,34 L150,30 L175,24 L200,18"/>
+                </svg>
+                <span class="spark-val">+0.48%</span>
+              </div>
+              <div class="spark-row">
+                <span class="spark-lab">saving rate</span>
+                <svg class="spark" viewBox="0 0 200 40" preserveAspectRatio="none">
+                  <path class="spark-path c-rose" d="M0,8 L20,10 L40,14 L60,18 L80,22 L100,25 L120,27 L140,29 L160,30 L180,31 L200,32"/>
+                </svg>
+                <span class="spark-val warn">3.6%</span>
+              </div>
+              <div class="spark-row">
+                <span class="spark-lab">prime LFPR</span>
+                <svg class="spark" viewBox="0 0 200 40" preserveAspectRatio="none">
+                  <path class="spark-path c-blue" d="M0,28 L20,24 L40,20 L60,16 L80,14 L100,12 L120,11 L140,10 L160,9 L180,8 L200,7"/>
+                </svg>
+                <span class="spark-val ok">83.8%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-links">
+          <a href="https://github.com/marksguo" target="_blank" rel="noopener">github <span>&rarr;</span></a>
+          <a href="https://public.tableau.com/app/profile/guomarks" target="_blank" rel="noopener">tableau dashboard <span>&rarr;</span></a>
+        </div>
+      </article>
+
+      <!-- 02 SPY Volatility -->
+      <article class="project" style="--accent: #ff7e6b; --accent-soft: rgba(255,126,107,.14);">
+        <div class="project-glow"></div>
+        <header class="project-head">
+          <div class="project-headl">
+            <span class="project-num">02 / risk</span>
+            <h3>S&amp;P 500 Volatility Prediction</h3>
+            <p class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">R</span>
+              <span class="tag">OLS</span>
+              <span class="tag">WLS</span>
+              <span class="tag">Robust M-Est.</span>
+            </p>
+          </div>
+          <span class="project-when">Jan &mdash; May 2026</span>
+        </header>
+
+        <p class="project-desc">
+          Built and compared three regression families on <b>4,800+ daily S&amp;P 500 returns
+          (2007&ndash;2026)</b> to predict realized volatility and quantify risk persistence
+          &mdash; the empirical backbone of any dynamic VaR framework.
+        </p>
+
+        <ul class="project-points">
+          <li>Confirmed statistically significant <b>volatility clustering</b> (<code>p &lt; 0.0001</code>); directly supports dynamic VaR and portfolio risk frameworks used in industry.</li>
+          <li>Validated via 70/30 train-test split with full diagnostic suite &mdash; heteroscedasticity testing, ACF analysis, Cook's distance influence detection.</li>
+          <li>Compared OLS, WLS, and Robust M-estimation to surface which assumptions hold once you stop pretending returns are i.i.d. normal.</li>
+        </ul>
+
+        <div class="project-viz horizontal">
+          <div class="metric-card">
+            <span class="metric-k">n</span>
+            <span class="metric-v">4,800+</span>
+            <span class="metric-sub">daily returns</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-k">window</span>
+            <span class="metric-v">2007&ndash;26</span>
+            <span class="metric-sub">19 yrs &middot; 2 regimes</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-k">clustering</span>
+            <span class="metric-v">p&lt;.0001</span>
+            <span class="metric-sub">significant</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-k">split</span>
+            <span class="metric-v">70 / 30</span>
+            <span class="metric-sub">train / test</span>
+          </div>
+        </div>
+
+        <div class="project-links">
+          <a href="https://github.com/marksguo/SPY-Volatility-Modeling" target="_blank" rel="noopener">
+            github.com/marksguo/SPY-Volatility-Modeling <span>&rarr;</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- 03 Bayesian -->
+      <article class="project" style="--accent: #c89eff; --accent-soft: rgba(200,158,255,.14);">
+        <div class="project-glow"></div>
+        <header class="project-head">
+          <div class="project-headl">
+            <span class="project-num">03 / inference</span>
+            <h3>Bayesian Hierarchical Modeling</h3>
+            <p class="project-tags">
+              <span class="tag">R</span>
+              <span class="tag">Metropolis-Hastings</span>
+              <span class="tag">MCMC</span>
+              <span class="tag">Diagnostics</span>
+            </p>
+          </div>
+          <span class="project-when">Sep 2025 &mdash; Mar 2026</span>
+        </header>
+
+        <p class="project-desc">
+          Implemented a hierarchical Bayesian model from scratch with a custom
+          Metropolis-Hastings sampler &mdash; not a library call &mdash; to estimate
+          group-level probabilities and quantify uncertainty rigorously.
+        </p>
+
+        <ul class="project-points">
+          <li>Ran <b>4 Markov chains × 100,000 iterations</b> each; tuned proposal step sizes for healthy acceptance rates.</li>
+          <li>Confirmed convergence via Gelman-Rubin diagnostics (<code>PSRF = 1.0</code>); effective sample sizes exceeding <b>26,000</b> across all chains.</li>
+          <li>Delivered findings with 95% credible intervals and actionable business recommendations translated for non-technical stakeholders.</li>
+        </ul>
+
+        <div class="project-viz horizontal">
+          <div class="metric-card">
+            <span class="metric-k">chains</span>
+            <span class="metric-v">4</span>
+            <span class="metric-sub">parallel</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-k">iter / chain</span>
+            <span class="metric-v">100k</span>
+            <span class="metric-sub">incl. burn-in</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-k">PSRF</span>
+            <span class="metric-v">1.0</span>
+            <span class="metric-sub">converged</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-k">ESS</span>
+            <span class="metric-v">26k+</span>
+            <span class="metric-sub">all chains</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 04 Amazon DCF -->
+      <article class="project" style="--accent: #e8b563; --accent-soft: rgba(232,181,99,.14);">
+        <div class="project-glow"></div>
+        <header class="project-head">
+          <div class="project-headl">
+            <span class="project-num">04 / valuation</span>
+            <h3>Amazon, Inc. &mdash; DCF &amp; Equity Valuation</h3>
+            <p class="project-tags">
+              <span class="tag">Excel</span>
+              <span class="tag">DCF</span>
+              <span class="tag">CAPM / WACC</span>
+              <span class="tag">Sensitivity</span>
+            </p>
+          </div>
+          <span class="project-when">Jan &mdash; Apr 2025</span>
+        </header>
+
+        <p class="project-desc">
+          Built a <b>5-year pro forma model</b> and DCF valuation using
+          CAPM-derived WACC across multiple macroeconomic scenarios; stress-tested
+          beta, WACC, and terminal growth via sensitivity tables. Closed with a
+          structured equity research report and a supported &ldquo;Hold&rdquo;
+          recommendation.
+        </p>
+        <ul class="project-points">
+          <li>Trend, common-size, and ratio analysis across profitability, liquidity, leverage, and default risk.</li>
+          <li>Scenario-conditional WACC and terminal growth bands to make the recommendation robust to the macro assumption.</li>
+        </ul>
+      </article>
+
+      <!-- 05 Endowment -->
+      <article class="project" style="--accent: #6ec5a8; --accent-soft: rgba(110,197,168,.14);">
+        <div class="project-glow"></div>
+        <header class="project-head">
+          <div class="project-headl">
+            <span class="project-num">05 / research</span>
+            <h3>University Endowment &amp; Resource Allocation</h3>
+            <p class="project-tags">
+              <span class="tag">Excel</span>
+              <span class="tag">NACUBO</span>
+              <span class="tag">IPEDS</span>
+              <span class="tag">Faculty Research</span>
+            </p>
+          </div>
+          <span class="project-when">Feb &mdash; Apr 2024</span>
+        </header>
+        <p class="project-desc">
+          Collaborative research with <b>Prof. Michael Rizzo</b> across
+          <b>11 universities</b>. Identified a significant correlation between
+          endowment-per-student and U.S. News rankings &mdash; presented to
+          Economics faculty with data-driven conclusions on institutional
+          resource-allocation tradeoffs.
+        </p>
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- SKILLS -->
+  <section id="skills" class="section">
+    <div class="container">
+      <header class="section-head">
+        <span class="section-num">/ 03</span>
+        <h2 class="section-h"><span class="hash">#</span> stack &amp; methods</h2>
+      </header>
+
+      <div class="skills-grid">
+        <div class="skill-block" style="--accent: #8b80ff;">
+          <h4>Languages &amp; tools</h4>
+          <ul class="chips">
+            <li>Python</li><li>R</li><li>SQL</li><li>PostgreSQL</li>
+            <li>Excel <em>(advanced)</em></li><li>Tableau</li><li>Power BI</li>
+            <li>pandas</li><li>SQLAlchemy</li><li>FRED API</li>
+          </ul>
+        </div>
+
+        <div class="skill-block" style="--accent: #ff7e6b;">
+          <h4>Quant &amp; statistics</h4>
+          <ul class="chips">
+            <li>Regression Modeling</li><li>Bayesian / MCMC</li>
+            <li>Monte Carlo</li><li>Time Series</li>
+            <li>Heteroscedasticity Diagnostics</li><li>Hypothesis Testing</li>
+          </ul>
+        </div>
+
+        <div class="skill-block" style="--accent: #e8b563;">
+          <h4>Finance</h4>
+          <ul class="chips">
+            <li>Financial Modeling</li><li>DCF / WACC / CAPM</li>
+            <li>Sensitivity Analysis</li><li>Equity Research</li>
+            <li>Financial Statement Analysis</li><li>Risk Management</li>
+          </ul>
+        </div>
+
+        <div class="skill-block" style="--accent: #6ec5a8;">
+          <h4>Languages spoken</h4>
+          <ul class="chips">
+            <li>English</li><li>Mandarin</li><li>Cantonese</li><li>Fuzhounese</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="coursework">
+        <h4>Relevant coursework</h4>
+        <p>
+          Statistical Methodology &middot; Financial Statement Analysis &middot;
+          Investments &middot; Statistical Computing in R &middot;
+          Financial Management &middot; Accounting &middot; Corporate Finance
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="section alt">
+    <div class="container">
+      <header class="section-head">
+        <span class="section-num">/ 04</span>
+        <h2 class="section-h"><span class="hash">#</span> experience</h2>
+      </header>
+
+      <div class="timeline">
+        <article class="job">
+          <span class="timeline-dot" style="--accent: #8b80ff;"></span>
+          <header class="job-head">
+            <div>
+              <h3>China Fun of NC, Inc.</h3>
+              <p class="job-role">Junior Financial &amp; Operations Analyst</p>
+            </div>
+            <div class="job-meta">
+              <span>Sep 2017 &mdash; Jul 2025</span>
+              <span>Charlotte, NC</span>
+            </div>
+          </header>
+          <ul class="project-points">
+            <li>Drove <b>25% revenue growth</b> (~$375K incremental annually) at a $1.5M+ revenue operation via margin expansion and data-driven process improvements across procurement, fulfillment, and labor.</li>
+            <li>Monitored food cost ratios against a ~32% COGS target; identified <b>$10K+ in annual ingredient savings</b> through vendor renegotiation and waste reduction across $30K+ in monthly procurement.</li>
+            <li>Built a <b>2,000-cell Excel order &amp; financial tracking system</b> integrated with DoorDash &mdash; reconciling $125K+ in monthly revenue across 150+ daily orders.</li>
+            <li>Prepared monthly P&amp;L summaries (revenue, ~28% labor, food cost) and presented to ownership to support operational and budgetary decisions.</li>
+            <li>Reconciled daily POS receipts to bank deposits with <b>&lt;0.5% discrepancy</b>; managed AP and supported quarterly tax documentation for CPA-led filings.</li>
+            <li>Processed bi-weekly payroll for 15+ employees with IRS-compliant tip reporting; trained 10+ staff on POS systems for a <b>30% efficiency gain</b>.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <span class="timeline-dot" style="--accent: #6ec5a8;"></span>
+          <header class="job-head">
+            <div>
+              <h3>Tien Ren Cultural &amp; Educational Foundation</h3>
+              <p class="job-role">Lecturer &amp; Event Organizer (2021&ndash;present) &middot; Assistant Lecturer (2019&ndash;2021)</p>
+            </div>
+            <div class="job-meta">
+              <span>Summer 2015 &mdash; current</span>
+              <span>Indian Trail, NC</span>
+            </div>
+          </header>
+          <ul class="project-points">
+            <li>Delivered <b>30+ educational sessions</b> to ~1,000 youth (ages 14&ndash;20).</li>
+            <li>Organized 3 annual volunteer events at <b>Second Harvest Food Bank of Metrolina</b>.</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <header class="section-head">
+        <span class="section-num">/ 05</span>
+        <h2 class="section-h"><span class="hash">#</span> let's talk</h2>
+      </header>
+
+      <p class="contact-lede">
+        I'm actively recruiting for <em>summer 2026</em> internships in
+        <b>quantitative research</b>, <b>equity research</b>, <b>actuarial</b>,
+        and <b>data / risk analytics</b>. If any of that sounds like a fit, I'd
+        love to hear from you.
+      </p>
+
+      <div class="contact-grid">
+        <a class="contact-card" href="mailto:marksguo2005@gmail.com" style="--accent: #8b80ff;">
+          <span class="cc-k">/ email</span>
+          <span class="cc-v">marksguo2005@gmail.com</span>
+          <span class="cc-arrow">&rarr;</span>
+        </a>
+        <a class="contact-card" href="tel:+19804309961" style="--accent: #ff7e6b;">
+          <span class="cc-k">/ phone</span>
+          <span class="cc-v">(980) 430-9961</span>
+          <span class="cc-arrow">&rarr;</span>
+        </a>
+        <a class="contact-card" href="https://github.com/marksguo" target="_blank" rel="noopener" style="--accent: #e8b563;">
+          <span class="cc-k">/ github</span>
+          <span class="cc-v">github.com/marksguo</span>
+          <span class="cc-arrow">&rarr;</span>
+        </a>
+        <a class="contact-card" href="https://public.tableau.com/app/profile/guomarks" target="_blank" rel="noopener" style="--accent: #6ec5a8;">
+          <span class="cc-k">/ tableau</span>
+          <span class="cc-v">public.tableau.com/guomarks</span>
+          <span class="cc-arrow">&rarr;</span>
+        </a>
+        <a class="contact-card" href="assets/Marks_Guo_Resume.pdf" target="_blank" rel="noopener" style="--accent: #c89eff;">
+          <span class="cc-k">/ resume</span>
+          <span class="cc-v">Marks_Guo_Resume.pdf &darr;</span>
+          <span class="cc-arrow">&rarr;</span>
+        </a>
+        <div class="contact-card static" style="--accent: #a0a0b0;">
+          <span class="cc-k">/ based</span>
+          <span class="cc-v">Charlotte, NC</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <span class="footer-mark">MG</span>
+      <span>&copy; <span id="year"></span> Marks Guo</span>
+    </div>
+    <span class="footer-sub">handcrafted &middot; no frameworks &middot; built may 2026</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
