@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Beyond U-3: Labor Market Dashboard — Marks Guo</title>
+<meta name="description" content="Case study: how the U-3 unemployment rate systematically understates labor market stress. Automated FRED → PostgreSQL pipeline tracking 14 economic series across 30+ years." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="case.css" />
+</head>
+<body>
+
+<div class="cursor-glow" aria-hidden="true"></div>
+<div class="aurora" aria-hidden="true">
+  <div class="aurora-blob a"></div>
+  <div class="aurora-blob b"></div>
+  <div class="aurora-blob c"></div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">MG</span>
+      <span class="brand-name">marks_guo</span>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html#projects">&larr; back to projects</a>
+    </nav>
+    <a href="https://github.com/marksguo/labor-market-dashboard" class="nav-cta" target="_blank" rel="noopener">
+      <span>view repo</span>
+      <span class="arrow">&rarr;</span>
+    </a>
+  </div>
+</header>
+
+<main class="case">
+
+  <!-- HERO -->
+  <section class="case-hero">
+    <div class="container">
+      <div class="case-meta">
+        <span class="case-tag" style="--accent: #8b80ff;">01 / labor analytics</span>
+        <span class="dot-sep">&middot;</span>
+        <span>May 2026 &mdash; current</span>
+        <span class="dot-sep">&middot;</span>
+        <span><span class="pulse-dot mini"></span> live pipeline</span>
+      </div>
+      <h1 class="case-title">
+        Beyond <em>U-3</em>.
+      </h1>
+      <p class="case-sub">
+        How the headline unemployment rate systematically understates
+        labor market stress &mdash; and what to watch instead.
+      </p>
+
+      <div class="case-stats">
+        <div><span class="case-stat-num">14</span><span class="case-stat-lab">FRED series</span></div>
+        <div><span class="case-stat-num">388</span><span class="case-stat-lab">monthly observations</span></div>
+        <div><span class="case-stat-num">30+</span><span class="case-stat-lab">years of history</span></div>
+        <div><span class="case-stat-num">3</span><span class="case-stat-lab">recessions covered</span></div>
+        <div><span class="case-stat-num">5.37</span><span class="case-stat-lab">pts avg gap, '08</span></div>
+        <div><span class="case-stat-num">21.4%</span><span class="case-stat-lab">temp help off peak</span></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- THESIS -->
+  <section class="case-section">
+    <div class="container narrow">
+      <span class="case-h-num">&sect; 01</span>
+      <h2 class="case-h">The thesis</h2>
+      <p>
+        The headline U-3 unemployment rate (currently <strong>4.3%</strong>, April 2026)
+        excludes three groups that materially change the picture of labor market health:
+      </p>
+      <ul class="case-list">
+        <li><strong>Discouraged workers</strong> who stopped looking for jobs.</li>
+        <li><strong>Marginally attached workers</strong> who want work but haven't searched recently.</li>
+        <li><strong>Involuntary part-time workers</strong> who want full-time employment but can't find it.</li>
+      </ul>
+      <p>
+        The BLS U-6 rate, which includes all three, currently sits at
+        <strong>8.2%</strong> &mdash; nearly double U-3. This project builds the data
+        infrastructure to track that gap historically, contextualize it against
+        recessions, and monitor the forward-looking indicators that turn
+        <em>before</em> U-3 does.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- MAIN CHART: U-3 vs U-6 -->
+  <section class="case-section chart-section">
+    <div class="container">
+      <header class="chart-head">
+        <span class="case-h-num">&sect; 02</span>
+        <h2 class="case-h">U-3 vs U-6, 1994&ndash;2026</h2>
+        <p class="case-sub-small">
+          Monthly seasonally-adjusted rates from FRED. Shaded bands mark NBER recessions.
+          The persistent gap between the two lines is the &ldquo;hidden&rdquo; labor stress
+          U-3 fails to capture.
+        </p>
+      </header>
+
+      <div class="chart-wrap">
+        <svg class="chart" viewBox="0 0 900 260" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="u3Grad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#8b80ff" stop-opacity="0.18"/>
+              <stop offset="100%" stop-color="#8b80ff" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="u6Grad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#ff7e6b" stop-opacity="0.22"/>
+              <stop offset="100%" stop-color="#ff7e6b" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+
+          <!-- recession bands -->
+          <g class="recession-bands">
+            <rect x="200.5" y="0" width="18.7"  height="260" fill="#f85149" opacity=".06"/>
+            <rect x="389.4" y="0" width="42.0"  height="260" fill="#f85149" opacity=".10"/>
+            <rect x="729.8" y="0" width="4.7"   height="260" fill="#f85149" opacity=".14"/>
+          </g>
+
+          <!-- y-axis gridlines -->
+          <g class="grid" stroke="#25203a" stroke-width="0.6" stroke-dasharray="2,3">
+            <line x1="0" y1="20"  x2="900" y2="20"/>   <!-- 24 -->
+            <line x1="0" y1="55"  x2="900" y2="55"/>   <!-- 20 -->
+            <line x1="0" y1="90"  x2="900" y2="90"/>   <!-- 16 -->
+            <line x1="0" y1="125" x2="900" y2="125"/>  <!-- 12 -->
+            <line x1="0" y1="160" x2="900" y2="160"/>  <!--  8 -->
+            <line x1="0" y1="195" x2="900" y2="195"/>  <!--  4 -->
+            <line x1="0" y1="230" x2="900" y2="230"/>  <!--  0 -->
+          </g>
+
+          <!-- y-axis labels -->
+          <g class="axis-labels" font-family="JetBrains Mono, monospace" font-size="10" fill="#6a647c">
+            <text x="6" y="24">24%</text>
+            <text x="6" y="59">20%</text>
+            <text x="6" y="94">16%</text>
+            <text x="6" y="129">12%</text>
+            <text x="6" y="164">8%</text>
+            <text x="6" y="199">4%</text>
+            <text x="6" y="234">0%</text>
+          </g>
+
+          <!-- x-axis year labels -->
+          <g class="axis-labels" font-family="JetBrains Mono, monospace" font-size="10" fill="#6a647c">
+            <text x="0"   y="252">1994</text>
+            <text x="167" y="252">2000</text>
+            <text x="307" y="252">2005</text>
+            <text x="447" y="252">2010</text>
+            <text x="587" y="252">2015</text>
+            <text x="727" y="252">2020</text>
+            <text x="867" y="252">2026</text>
+          </g>
+
+          <!-- recession labels -->
+          <g class="recession-labels" font-family="JetBrains Mono, monospace" font-size="9" fill="#a39db8">
+            <text x="206" y="14">dot-com</text>
+            <text x="395" y="14">great recession</text>
+            <text x="700" y="14">covid</text>
+          </g>
+
+          <!-- U-6 line (drawn first, behind U-3) -->
+          <path class="chart-line-u6"
+                d="M0.0,127.6 L2.3,130.2 L4.7,129.4 L7.0,131.1 L9.3,134.6 L11.7,133.8 L14.0,135.5 L16.3,137.2 L18.7,139.0 L21.0,139.0 L23.3,141.6 L25.6,141.6 L28.0,141.6 L30.3,143.4 L32.6,143.4 L35.0,141.6 L37.3,141.6 L39.6,141.6 L42.0,141.6 L44.3,141.6 L46.6,140.8 L49.0,142.5 L51.3,141.6 L53.6,142.5 L56.0,144.2 L58.3,142.5 L60.6,143.4 L63.0,142.5 L65.3,144.2 L67.6,145.1 L69.9,145.1 L72.3,147.8 L74.6,146.9 L76.9,146.9 L79.3,147.8 L81.6,146.0 L83.9,147.8 L86.3,148.6 L88.6,150.4 L90.9,148.6 L93.3,152.1 L95.6,152.1 L97.9,153.9 L100.3,153.9 L102.6,153.9 L104.9,155.6 L107.3,156.5 L109.6,155.6 L111.9,156.5 L114.2,157.4 L116.6,156.5 L118.9,160.0 L121.2,160.0 L123.6,159.1 L125.9,158.3 L128.2,160.9 L130.6,160.0 L132.9,160.9 L135.2,162.6 L137.6,163.5 L139.9,163.5 L142.2,162.6 L144.6,164.4 L146.9,162.6 L149.2,165.2 L151.6,164.4 L153.9,164.4 L156.2,166.1 L158.5,165.2 L160.9,167.0 L163.2,167.0 L165.5,167.9 L167.9,168.7 L170.2,167.9 L172.5,167.9 L174.9,169.6 L177.2,167.9 L179.5,168.7 L181.9,168.7 L184.2,167.9 L186.5,168.7 L188.9,170.5 L191.2,167.9 L193.5,169.6 L195.9,166.1 L198.2,166.1 L200.5,166.1 L202.8,165.2 L205.2,164.4 L207.5,160.9 L209.8,160.9 L212.2,158.3 L214.5,153.9 L216.8,148.6 L219.2,147.8 L221.5,146.0 L223.8,147.8 L226.2,146.9 L228.5,147.8 L230.8,145.1 L233.2,146.0 L235.5,146.9 L237.8,146.0 L240.2,146.0 L242.5,146.0 L244.8,146.0 L247.2,144.2 L249.5,144.2 L251.8,143.4 L254.1,141.6 L256.5,142.5 L258.8,140.8 L261.1,141.6 L263.5,139.9 L265.8,139.9 L268.1,141.6 L270.5,139.0 L272.8,140.8 L275.1,141.6 L277.5,144.2 L279.8,144.2 L282.1,145.1 L284.5,142.5 L286.8,146.0 L289.1,145.1 L291.5,146.0 L293.8,146.9 L296.1,147.8 L298.4,147.8 L300.8,145.1 L303.1,147.8 L305.4,148.6 L307.8,149.5 L310.1,149.5 L312.4,150.4 L314.8,151.2 L317.1,152.1 L319.4,151.2 L321.8,153.0 L324.1,152.1 L326.4,151.2 L328.8,153.9 L331.1,153.9 L333.4,154.8 L335.8,156.5 L338.1,156.5 L340.4,158.3 L342.7,159.1 L345.1,158.3 L347.4,156.5 L349.7,155.6 L352.1,156.5 L354.4,160.0 L356.7,158.3 L359.1,159.1 L361.4,160.9 L363.7,157.4 L366.1,159.1 L368.4,160.0 L370.7,158.3 L373.1,158.3 L375.4,157.4 L377.7,156.5 L380.1,156.5 L382.4,156.5 L384.7,156.5 L387.0,155.6 L389.4,153.0 L391.7,150.4 L394.0,151.2 L396.4,150.4 L398.7,149.5 L401.0,145.1 L403.4,142.5 L405.7,138.1 L408.0,135.5 L410.4,132.9 L412.7,126.8 L415.0,118.9 L417.4,111.0 L419.7,106.6 L422.0,97.9 L424.4,91.8 L426.7,90.9 L429.0,85.6 L431.3,85.6 L433.7,86.5 L436.0,83.9 L438.3,83.9 L440.7,80.4 L443.0,80.4 L445.3,79.5 L447.7,84.7 L450.0,81.2 L452.3,80.4 L454.7,79.5 L457.0,83.9 L459.3,86.5 L461.7,86.5 L464.0,85.6 L466.3,82.1 L468.7,84.7 L471.0,82.1 L473.3,84.7 L475.6,89.1 L478.0,90.0 L480.3,90.0 L482.6,89.1 L485.0,90.9 L487.3,89.1 L489.6,90.9 L492.0,89.1 L494.3,86.5 L496.6,91.8 L499.0,93.5 L501.3,97.0 L503.6,97.9 L506.0,98.8 L508.3,102.3 L510.6,101.4 L513.0,100.5 L515.3,101.4 L517.6,101.4 L519.9,102.3 L522.3,100.5 L524.6,104.0 L526.9,104.0 L529.3,104.0 L531.6,103.1 L533.9,104.9 L536.3,108.4 L538.6,107.5 L540.9,108.4 L543.3,105.8 L545.6,109.2 L547.9,111.0 L550.3,111.9 L552.6,111.0 L554.9,115.4 L557.3,115.4 L559.6,119.8 L561.9,119.8 L564.2,118.9 L566.6,122.4 L568.9,122.4 L571.2,125.0 L573.6,124.1 L575.9,125.0 L578.2,127.6 L580.6,129.4 L582.9,130.2 L585.2,132.0 L587.6,132.0 L589.9,134.6 L592.2,134.6 L594.6,134.6 L596.9,134.6 L599.2,139.0 L601.6,139.9 L603.9,140.8 L606.2,142.5 L608.5,144.2 L610.9,142.5 L613.2,143.4 L615.5,145.1 L617.9,146.0 L620.2,144.2 L622.5,143.4 L624.9,143.4 L627.2,146.9 L629.5,146.0 L631.9,146.0 L634.2,145.1 L636.5,146.0 L638.9,147.8 L641.2,149.5 L643.5,149.5 L645.9,151.2 L648.2,153.0 L650.5,154.8 L652.8,155.6 L655.2,155.6 L657.5,155.6 L659.8,154.8 L662.2,157.4 L664.5,159.1 L666.8,160.0 L669.2,159.1 L671.5,160.0 L673.8,159.1 L676.2,160.0 L678.5,160.9 L680.8,161.8 L683.2,161.8 L685.5,164.4 L687.8,165.2 L690.2,164.4 L692.5,164.4 L694.8,163.5 L697.2,163.5 L699.5,160.0 L701.8,167.0 L704.1,165.2 L706.5,165.2 L708.8,167.9 L711.1,167.0 L713.5,169.6 L715.8,167.0 L718.1,169.6 L720.5,169.6 L722.8,170.5 L725.1,170.5 L727.5,168.7 L729.8,168.7 L732.1,153.0 L734.5,29.6 L736.8,45.4 L739.1,72.5 L741.5,85.6 L743.8,105.8 L746.1,118.0 L748.4,124.1 L750.8,125.9 L753.1,127.6 L755.4,132.0 L757.8,132.9 L760.1,135.5 L762.4,139.9 L764.8,141.6 L767.1,144.2 L769.4,149.5 L771.8,153.0 L774.1,156.5 L776.4,158.3 L778.8,162.6 L781.1,166.1 L783.4,167.9 L785.8,167.0 L788.1,168.7 L790.4,168.7 L792.7,167.9 L795.1,171.4 L797.4,170.5 L799.7,169.6 L802.1,171.4 L804.4,171.4 L806.7,171.4 L809.1,172.3 L811.4,171.4 L813.7,170.5 L816.1,171.4 L818.4,172.3 L820.7,171.4 L823.1,169.6 L825.4,171.4 L827.7,167.9 L830.1,168.7 L832.4,167.0 L834.7,168.7 L837.0,167.0 L839.4,167.0 L841.7,166.1 L844.0,166.1 L846.4,165.2 L848.7,165.2 L851.0,165.2 L853.4,161.8 L855.7,161.8 L858.0,162.6 L860.4,162.6 L862.7,162.6 L865.0,163.5 L867.4,164.4 L869.7,160.0 L872.0,160.9 L874.4,161.8 L876.7,161.8 L879.0,162.6 L881.3,160.9 L883.7,159.1 L886.0,159.1 L888.3,153.9 L890.7,156.5 L893.0,159.1 L895.3,160.9 L897.7,160.0 L900.0,158.3"
+                fill="none" stroke="#ff7e6b" stroke-width="1.4" stroke-linejoin="round" />
+
+          <!-- U-3 line -->
+          <path class="chart-line-u3"
+                d="M0.0,172.3 L2.3,172.3 L4.7,173.1 L7.0,174.0 L9.3,176.6 L11.7,176.6 L14.0,176.6 L16.3,177.5 L18.7,178.4 L21.0,179.2 L23.3,181.0 L25.6,181.9 L28.0,181.0 L30.3,182.8 L32.6,182.8 L35.0,179.2 L37.3,181.0 L39.6,181.0 L42.0,180.1 L44.3,180.1 L46.6,181.0 L49.0,181.9 L51.3,181.0 L53.6,181.0 L56.0,181.0 L58.3,181.9 L60.6,181.9 L63.0,181.0 L65.3,181.0 L67.6,183.6 L69.9,181.9 L72.3,185.4 L74.6,184.5 L76.9,184.5 L79.3,182.8 L81.6,182.8 L83.9,183.6 L86.3,184.5 L88.6,184.5 L90.9,185.4 L93.3,187.1 L95.6,186.2 L97.9,187.1 L100.3,188.0 L102.6,187.1 L104.9,188.9 L107.3,189.8 L109.6,188.9 L111.9,189.8 L114.2,189.8 L116.6,188.9 L118.9,192.4 L121.2,191.5 L123.6,190.6 L125.9,190.6 L128.2,190.6 L130.6,189.8 L132.9,190.6 L135.2,191.5 L137.6,191.5 L139.9,192.4 L142.2,191.5 L144.6,193.2 L146.9,192.4 L149.2,193.2 L151.6,192.4 L153.9,192.4 L156.2,193.2 L158.5,193.2 L160.9,194.1 L163.2,194.1 L165.5,195.0 L167.9,195.0 L170.2,194.1 L172.5,195.0 L174.9,196.8 L177.2,195.0 L179.5,195.0 L181.9,195.0 L184.2,194.1 L186.5,195.9 L188.9,195.9 L191.2,195.9 L193.5,195.9 L195.9,193.2 L198.2,193.2 L200.5,192.4 L202.8,191.5 L205.2,192.4 L207.5,190.6 L209.8,189.8 L212.2,187.1 L214.5,186.2 L216.8,183.6 L219.2,181.9 L221.5,180.1 L223.8,180.1 L226.2,180.1 L228.5,180.1 L230.8,178.4 L233.2,179.2 L235.5,179.2 L237.8,179.2 L240.2,180.1 L242.5,180.1 L244.8,180.1 L247.2,178.4 L249.5,177.5 L251.8,179.2 L254.1,178.4 L256.5,178.4 L258.8,177.5 L261.1,176.6 L263.5,174.9 L265.8,175.8 L268.1,176.6 L270.5,176.6 L272.8,177.5 L275.1,179.2 L277.5,180.1 L279.8,180.1 L282.1,181.0 L284.5,179.2 L286.8,181.0 L289.1,181.0 L291.5,181.0 L293.8,181.9 L296.1,182.8 L298.4,182.8 L300.8,181.9 L303.1,182.8 L305.4,182.8 L307.8,183.6 L310.1,182.8 L312.4,184.5 L314.8,184.5 L317.1,185.4 L319.4,186.2 L321.8,186.2 L324.1,187.1 L326.4,186.2 L328.8,186.2 L331.1,186.2 L333.4,187.1 L335.8,188.9 L338.1,188.0 L340.4,188.9 L342.7,188.9 L345.1,189.8 L347.4,189.8 L349.7,188.9 L352.1,188.9 L354.4,190.6 L356.7,191.5 L359.1,190.6 L361.4,191.5 L363.7,189.8 L366.1,190.6 L368.4,191.5 L370.7,190.6 L373.1,191.5 L375.4,189.8 L377.7,188.9 L380.1,189.8 L382.4,188.9 L384.7,188.9 L387.0,188.9 L389.4,186.2 L391.7,186.2 L394.0,187.1 L396.4,185.4 L398.7,186.2 L401.0,182.8 L403.4,181.0 L405.7,179.2 L408.0,176.6 L410.4,176.6 L412.7,173.1 L415.0,170.5 L417.4,166.1 L419.7,161.8 L422.0,157.4 L424.4,153.9 L426.7,151.2 L429.0,147.8 L431.3,146.9 L433.7,146.9 L436.0,146.0 L438.3,144.2 L440.7,142.5 L443.0,143.4 L445.3,143.4 L447.7,144.2 L450.0,144.2 L452.3,143.4 L454.7,143.4 L457.0,146.0 L459.3,147.8 L461.7,147.8 L464.0,146.9 L466.3,146.9 L468.7,147.8 L471.0,144.2 L473.3,148.6 L475.6,150.4 L478.0,151.2 L480.3,151.2 L482.6,150.4 L485.0,151.2 L487.3,150.4 L489.6,151.2 L492.0,151.2 L494.3,151.2 L496.6,153.0 L499.0,154.8 L501.3,155.6 L503.6,157.4 L506.0,157.4 L508.3,158.3 L510.6,158.3 L513.0,158.3 L515.3,158.3 L517.6,158.3 L519.9,159.1 L522.3,161.8 L524.6,161.8 L526.9,162.6 L529.3,160.9 L531.6,160.0 L533.9,162.6 L536.3,164.4 L538.6,163.5 L540.9,164.4 L543.3,164.4 L545.6,166.1 L547.9,167.0 L550.3,167.0 L552.6,167.0 L554.9,169.6 L557.3,171.4 L559.6,172.3 L561.9,171.4 L564.2,171.4 L566.6,175.8 L568.9,174.9 L571.2,176.6 L573.6,175.8 L575.9,176.6 L578.2,178.4 L580.6,180.1 L582.9,179.2 L585.2,181.0 L587.6,180.1 L589.9,181.9 L592.2,182.8 L594.6,182.8 L596.9,181.0 L599.2,183.6 L601.6,184.5 L603.9,185.4 L606.2,186.2 L608.5,186.2 L610.9,185.4 L613.2,186.2 L615.5,188.0 L617.9,187.1 L620.2,186.2 L622.5,185.4 L624.9,188.0 L627.2,187.1 L629.5,188.0 L631.9,187.1 L634.2,186.2 L636.5,187.1 L638.9,188.9 L641.2,188.9 L643.5,188.9 L645.9,189.8 L648.2,191.5 L650.5,191.5 L652.8,191.5 L655.2,192.4 L657.5,192.4 L659.8,191.5 L662.2,192.4 L664.5,193.2 L666.8,193.2 L669.2,194.1 L671.5,195.0 L673.8,194.1 L676.2,195.0 L678.5,195.0 L680.8,196.8 L683.2,195.0 L685.5,196.8 L687.8,196.8 L690.2,197.6 L692.5,196.8 L694.8,196.8 L697.2,195.9 L699.5,195.0 L701.8,196.8 L704.1,196.8 L706.5,197.6 L708.8,198.5 L711.1,198.5 L713.5,197.6 L715.8,198.5 L718.1,199.4 L720.5,198.5 L722.8,198.5 L725.1,198.5 L727.5,198.5 L729.8,199.4 L732.1,191.5 L734.5,100.5 L736.8,114.5 L739.1,133.8 L741.5,140.8 L743.8,156.5 L746.1,161.8 L748.4,169.6 L750.8,171.4 L753.1,171.4 L755.4,174.0 L757.8,175.8 L760.1,176.6 L762.4,176.6 L764.8,179.2 L767.1,178.4 L769.4,182.8 L771.8,185.4 L774.1,188.9 L776.4,190.6 L778.8,194.1 L781.1,195.9 L783.4,195.0 L785.8,195.9 L788.1,197.6 L790.4,197.6 L792.7,198.5 L795.1,198.5 L797.4,199.4 L799.7,198.5 L802.1,199.4 L804.4,198.5 L806.7,198.5 L809.1,199.4 L811.4,199.4 L813.7,198.5 L816.1,199.4 L818.4,200.2 L820.7,198.5 L823.1,198.5 L825.4,199.4 L827.7,197.6 L830.1,197.6 L832.4,195.9 L834.7,197.6 L837.0,196.8 L839.4,197.6 L841.7,195.9 L844.0,195.9 L846.4,195.9 L848.7,195.9 L851.0,194.1 L853.4,193.2 L855.7,193.2 L858.0,194.1 L860.4,194.1 L862.7,193.2 L865.0,194.1 L867.4,195.0 L869.7,193.2 L872.0,193.2 L874.4,193.2 L876.7,192.4 L879.0,194.1 L881.3,192.4 L883.7,192.4 L886.0,191.5 L888.3,190.6 L890.7,191.5 L893.0,192.4 L895.3,191.5 L897.7,192.4 L900.0,192.4"
+                fill="none" stroke="#8b80ff" stroke-width="1.6" stroke-linejoin="round" />
+        </svg>
+
+        <div class="chart-legend">
+          <span><i style="background: #8b80ff;"></i> U-3 (official)</span>
+          <span><i style="background: #ff7e6b;"></i> U-6 (includes hidden)</span>
+          <span><i style="background: rgba(248,81,73,.3);"></i> NBER recession</span>
+        </div>
+      </div>
+
+      <p class="chart-caption">
+        Notice the COVID spike: U-3 hit 14.7%, U-6 hit 22.8%. The gap widens
+        most in stress periods &mdash; exactly when policymakers most need accurate signals.
+        Data: FRED series UNRATE, U6RATE.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- KEY FINDINGS -->
+  <section class="case-section">
+    <div class="container narrow">
+      <span class="case-h-num">&sect; 03</span>
+      <h2 class="case-h">Key findings</h2>
+
+      <h3 class="case-sh">The hidden labor gap is not stable &mdash; it widens in stress</h3>
+      <div class="findings-table">
+        <table>
+          <thead>
+            <tr><th>Period</th><th>Avg U-3/U-6 gap</th><th>Months</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Great Recession (Dec '07 &mdash; Jun '09)</td><td>5.37 pts</td><td>19</td></tr>
+            <tr><td>COVID Shock (Feb &mdash; Apr 2020)</td><td>5.33 pts</td><td>3</td></tr>
+            <tr><td>Normal Periods</td><td>4.42 pts</td><td>~340</td></tr>
+            <tr><td>Dot-com Recession (Mar &mdash; Nov '01)</td><td>4.18 pts</td><td>9</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="case-aside">
+        Computed via SQL with a CASE-based recession classifier &mdash; see
+        <a href="https://github.com/marksguo/labor-market-dashboard/blob/main/sql/analysis_queries.sql" target="_blank" rel="noopener">analysis_queries.sql &rarr;</a>
+      </p>
+
+      <h3 class="case-sh">Eight leading indicators &mdash; current state</h3>
+      <div class="indicators">
+        <div class="ind-card" style="--accent: #f85149;">
+          <span class="ind-label">Temp Help Employment</span>
+          <span class="ind-value">&minus;21.4%</span>
+          <span class="ind-note">from Mar 2022 peak (3,161K &rarr; 2,485K). Has led every recession since 1980.</span>
+          <span class="ind-status">warning</span>
+        </div>
+        <div class="ind-card" style="--accent: #f85149;">
+          <span class="ind-label">Yield Curve (10Y&minus;2Y)</span>
+          <span class="ind-value">+0.52%</span>
+          <span class="ind-note">Recently uninverted after longest inversion since 1980s. The classic recession-window signal.</span>
+          <span class="ind-status">warning</span>
+        </div>
+        <div class="ind-card" style="--accent: #e8b563;">
+          <span class="ind-label">Personal Saving Rate</span>
+          <span class="ind-value">3.6%</span>
+          <span class="ind-note">vs pre-COVID avg of 5.40%. Consumer buffer depleted.</span>
+          <span class="ind-status">stress</span>
+        </div>
+        <div class="ind-card" style="--accent: #e8b563;">
+          <span class="ind-label">Quits Rate</span>
+          <span class="ind-value">2.0%</span>
+          <span class="ind-note">Collapsed 33% from peak (3.0% &rarr; 2.0%). Worker confidence eroded.</span>
+          <span class="ind-status">softening</span>
+        </div>
+        <div class="ind-card" style="--accent: #6ec5a8;">
+          <span class="ind-label">Initial Jobless Claims</span>
+          <span class="ind-value">~212K</span>
+          <span class="ind-note">Not yet elevated. Layoffs haven't accelerated.</span>
+          <span class="ind-status">benign</span>
+        </div>
+        <div class="ind-card" style="--accent: #6ec5a8;">
+          <span class="ind-label">Prime-Age LFPR (25&ndash;54)</span>
+          <span class="ind-value">83.8%</span>
+          <span class="ind-note">Near multi-decade highs. Demographic core is engaged.</span>
+          <span class="ind-status">healthy</span>
+        </div>
+      </div>
+
+      <blockquote class="case-quote">
+        Not every indicator is flashing red. The thesis is not that recession is
+        certain &mdash; it is that U-3 alone gives an incomplete picture, and the
+        indicators underneath show more stress than the headline suggests.
+      </blockquote>
+    </div>
+  </section>
+
+
+  <!-- ARCHITECTURE -->
+  <section class="case-section">
+    <div class="container narrow">
+      <span class="case-h-num">&sect; 04</span>
+      <h2 class="case-h">Architecture</h2>
+      <p>
+        Every piece is automated. A single Python entry-point reads 14 FRED
+        series, resamples mixed-frequency data (daily/weekly/monthly &rarr; monthly),
+        computes derived metrics, and loads everything into PostgreSQL via
+        SQLAlchemy. Windows Task Scheduler kicks it off on the 5th of each
+        month, two days after the typical BLS Employment Situation release.
+      </p>
+
+      <pre class="case-code">FRED API  (14 series)
+   |
+   v
+python/fred_pipeline.py
+   |- fredapi pulls all series
+   |- resamples to monthly
+   |- computes U3/U6 gap, temp-help % off all-time peak
+   |- bulk-inserts via SQLAlchemy
+   |
+   v
+PostgreSQL 18  (labor_dashboard)
+   |- unemployment_measures
+   |- labor_force_participation
+   |- epop
+   |- leading_indicators
+   |
+   v
+CSV exports  -->  Tableau Public  (2 dashboards)</pre>
+    </div>
+  </section>
+
+
+  <!-- SCHEMA + SQL -->
+  <section class="case-section">
+    <div class="container narrow">
+      <span class="case-h-num">&sect; 05</span>
+      <h2 class="case-h">Schema &amp; SQL</h2>
+      <p>
+        Four normalized tables. Each pipeline run truncates and re-inserts so
+        the snapshot is end-to-end consistent with the latest FRED release.
+      </p>
+      <pre class="case-code">CREATE TABLE unemployment_measures (
+    id      SERIAL PRIMARY KEY,
+    date    DATE NOT NULL,
+    u3_rate DECIMAL(5,2),
+    u4_rate DECIMAL(5,2),
+    u5_rate DECIMAL(5,2),
+    u6_rate DECIMAL(5,2)
+);
+
+CREATE TABLE leading_indicators (
+    id                    SERIAL PRIMARY KEY,
+    date                  DATE NOT NULL,
+    temp_help             DECIMAL(10,2),
+    temp_help_pct_decline DECIMAL(5,2),
+    quits_rate            DECIMAL(5,2),
+    saving_rate           DECIMAL(5,2),
+    jobless_claims        DECIMAL(10,0),
+    yield_curve           DECIMAL(6,3),
+    consumer_credit       DECIMAL(10,2),
+    cc_delinquency        DECIMAL(5,2),
+    prime_age_lfpr        DECIMAL(5,2)
+);</pre>
+
+      <h3 class="case-sh">The query behind the headline finding</h3>
+      <pre class="case-code">SELECT
+    CASE
+        WHEN date BETWEEN '2007-12-01' AND '2009-06-30' THEN 'Great Recession'
+        WHEN date BETWEEN '2020-02-01' AND '2020-04-30' THEN 'COVID Shock'
+        WHEN date BETWEEN '2001-03-01' AND '2001-11-30' THEN 'Dot-com Recession'
+        ELSE 'Normal Period'
+    END AS period,
+    ROUND(AVG(u6_rate - u3_rate), 2) AS avg_gap_pts,
+    COUNT(*) AS months
+FROM unemployment_measures
+GROUP BY 1
+ORDER BY avg_gap_pts DESC;</pre>
+    </div>
+  </section>
+
+
+  <!-- FRED SERIES -->
+  <section class="case-section">
+    <div class="container narrow">
+      <span class="case-h-num">&sect; 06</span>
+      <h2 class="case-h">The 14 FRED series</h2>
+      <div class="series-grid">
+        <div><code>UNRATE</code> &middot; U-3 Unemployment Rate</div>
+        <div><code>U4RATE</code> &middot; +&nbsp;discouraged workers</div>
+        <div><code>U5RATE</code> &middot; +&nbsp;marginally attached</div>
+        <div><code>U6RATE</code> &middot; +&nbsp;involuntary part-time</div>
+        <div><code>CIVPART</code> &middot; Labor Force Participation Rate</div>
+        <div><code>EMRATIO</code> &middot; Employment-to-Population Ratio</div>
+        <div><code>TEMPHELPS</code> &middot; Temp Help Services Employment</div>
+        <div><code>JTSQUR</code> &middot; JOLTS Quits Rate</div>
+        <div><code>PSAVERT</code> &middot; Personal Saving Rate</div>
+        <div><code>ICSA</code> &middot; Initial Jobless Claims (wkly)</div>
+        <div><code>T10Y2Y</code> &middot; 10Y&ndash;2Y Treasury Spread (daily)</div>
+        <div><code>TOTALSL</code> &middot; Total Consumer Credit Outstanding</div>
+        <div><code>DRCCLACBS</code> &middot; Credit Card Delinquency Rate</div>
+        <div><code>LNS11300060</code> &middot; Prime-Age (25&ndash;54) LFPR</div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER CTA -->
+  <section class="case-section case-cta">
+    <div class="container narrow">
+      <h2 class="case-cta-h">Go deeper</h2>
+      <div class="case-links">
+        <a class="case-link" style="--accent: #8b80ff;" href="https://github.com/marksguo/labor-market-dashboard" target="_blank" rel="noopener">
+          <span class="cl-k">/ source</span>
+          <span class="cl-v">github.com/marksguo/labor-market-dashboard</span>
+          <span class="cl-arrow">&rarr;</span>
+        </a>
+        <a class="case-link" style="--accent: #ff7e6b;" href="https://public.tableau.com/app/profile/guomarks" target="_blank" rel="noopener">
+          <span class="cl-k">/ dashboard</span>
+          <span class="cl-v">tableau.com/profile/guomarks</span>
+          <span class="cl-arrow">&rarr;</span>
+        </a>
+        <a class="case-link" style="--accent: #e8b563;" href="https://fred.stlouisfed.org/" target="_blank" rel="noopener">
+          <span class="cl-k">/ data</span>
+          <span class="cl-v">FRED &middot; St. Louis Fed</span>
+          <span class="cl-arrow">&rarr;</span>
+        </a>
+        <a class="case-link" style="--accent: #6ec5a8;" href="index.html#projects">
+          <span class="cl-k">/ back</span>
+          <span class="cl-v">other projects</span>
+          <span class="cl-arrow">&larr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <span class="footer-mark">MG</span>
+      <span>&copy; <span id="year"></span> Marks Guo</span>
+    </div>
+    <span class="footer-sub">case study &middot; beyond U-3 labor dashboard</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
