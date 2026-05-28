@@ -53,7 +53,7 @@
 
       <div class="hero-eyebrow">
         <span class="pulse-dot"></span>
-        <span class="reveal">open to <strong>summer 2026 internships</strong></span>
+        <span class="reveal">open to <strong>winter 2026 &amp; summer 2027 internships</strong></span>
         <span class="dot-sep">&middot;</span>
         <span class="reveal">Charlotte, NC</span>
       </div>
@@ -76,12 +76,13 @@
       </div>
 
       <p class="hero-lede reveal-up" style="--d: .20s">
-        Hi &mdash; I'm Marks. Junior at the <em>University of Rochester</em>
-        studying Statistics &amp; Finance, based in Charlotte. I like turning
-        messy data into stories that hold up under scrutiny &mdash; lately
-        that's meant volatility modeling on the S&amp;P, a Bayesian sampler I
-        wrote from scratch, and a live PostgreSQL pipeline tracking the labor
-        indicators that actually move the needle.
+        Hi, I'm Marks &mdash; a Statistics &amp; Finance student at the
+        <em>University of Rochester</em> who's genuinely into data analytics,
+        statistical modeling, and quantitative risk. Lately I've been building a
+        live <em>FRTB risk monitor</em> that computes regulatory capital and
+        backtests itself, and digging through FRED data and labor statistics to
+        find the signals that actually move the needle &mdash; I like turning
+        messy data into things that hold up under a second look.
       </p>
 
       <div class="hero-stats reveal-up" style="--d: .28s">
@@ -247,12 +248,89 @@
         <p class="section-sub">Independent research &mdash; full pipeline, code, and write-up on each.</p>
       </header>
 
-      <!-- 01 Labor Dashboard -->
+      <!-- 01 FRTB Risk Monitor -->
+      <article class="project" style="--accent: #58a6ff; --accent-soft: rgba(88,166,255,.14);">
+        <div class="project-glow"></div>
+        <header class="project-head">
+          <div class="project-headl">
+            <span class="project-num">01 / frtb</span>
+            <h3>FRTB IMA Risk Monitor</h3>
+            <p class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Plotly Dash</span>
+              <span class="tag">Docker</span>
+              <span class="tag">CI/CD</span>
+              <span class="tag">Claude API</span>
+            </p>
+          </div>
+          <span class="project-when">May 2026 &mdash; current</span>
+        </header>
+
+        <p class="project-desc">
+          A production-grade, automated risk system computing Basel III
+          <em>FRTB</em> Internal-Models-Approach capital &mdash; Value at Risk,
+          Expected Shortfall, stress calibration, and a Standardised-Approach
+          comparison &mdash; on a multi-asset book, served to a
+          <b>live, deployed dashboard</b>.
+        </p>
+
+        <ul class="project-points">
+          <li>97.5% Historical-Simulation <b>VaR &amp; Expected Shortfall</b> (with parametric &amp; Monte-Carlo Student-t comparisons), stress-calibrated and liquidity-horizon-adjusted, across a 6-asset book (<b>29,000+</b> daily obs, 2007&ndash;26).</li>
+          <li>Computes an <b>Internal-Models vs Standardised-Approach</b> capital charge under the Basel III <b>output floor</b> &mdash; here the SA floor binds at <b>11.2%</b> of notional.</li>
+          <li>Weekly <b>Acerbi-Szekely</b> ES backtest with Kupiec &amp; Christoffersen tests; surfaced a <b>54%-of-weeks</b> failure rate revealing the procyclicality of rolling-window ES.</li>
+          <li>Engineered end-to-end: <b>pytest + GitHub Actions CI</b>, a Dockerized stack, daily Task-Scheduler automation, and a Claude-API narrative generator.</li>
+          <li>Architected by directing <b>Claude Code (agentic AI)</b>, with every risk function validated against hand-checked results as the human-in-the-loop.</li>
+        </ul>
+
+        <div class="project-viz horizontal">
+          <div class="metric-card">
+            <span class="metric-k">ES 97.5%</span>
+            <span class="metric-v">1.56%</span>
+            <span class="metric-sub">liq-adj 3.36%</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-k">capital</span>
+            <span class="metric-v">11.2%</span>
+            <span class="metric-sub">SA floor binds</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-k">backtest</span>
+            <span class="metric-v">54%</span>
+            <span class="metric-sub">weeks fail</span>
+          </div>
+          <div class="metric-card">
+            <span class="metric-k">history</span>
+            <span class="metric-v">29k+</span>
+            <span class="metric-sub">obs &middot; 2007&ndash;26</span>
+          </div>
+        </div>
+
+        <figure class="project-shot" style="margin:1.25rem 0 0;">
+          <img src="assets/frtb-dashboard.png" loading="lazy"
+               alt="FRTB risk dashboard: ES vs VaR, volatility regime, per-asset risk contribution, and weekly backtest"
+               style="width:100%; border-radius:12px; border:1px solid rgba(255,255,255,.08); display:block;" />
+          <figcaption style="margin:.6rem 0 0; font-size:.78rem; color:#9aa0aa;">Reading the four panels:</figcaption>
+          <ul style="list-style:none; padding:0; margin:.4rem 0 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:.35rem .9rem; font-size:.78rem; color:#9aa0aa; line-height:1.45;">
+            <li><b style="color:#58a6ff;">ES vs VaR</b> &mdash; average tail-day loss vs the loss threshold, over 252 days.</li>
+            <li><b style="color:#58a6ff;">Volatility regime</b> &mdash; shaded background: green calm, amber elevated, red stressed.</li>
+            <li><b style="color:#58a6ff;">Asset contribution</b> &mdash; which holding drives today's potential bad-day loss.</li>
+            <li><b style="color:#58a6ff;">Backtest (Z2)</b> &mdash; weekly model check; green passes, red underestimates risk.</li>
+          </ul>
+        </figure>
+
+        <div class="project-links">
+          <a href="https://frtb-ima-risk-monitor.onrender.com/" target="_blank" rel="noopener">live dashboard <span>&rarr;</span></a>
+          <a href="https://github.com/marksguo/frtb-ima-risk-monitor" target="_blank" rel="noopener">github <span>&rarr;</span></a>
+        </div>
+      </article>
+
+      <!-- 02 Labor Dashboard -->
       <article class="project" style="--accent: #8b80ff; --accent-soft: rgba(139,128,255,.14);">
         <div class="project-glow"></div>
         <header class="project-head">
           <div class="project-headl">
-            <span class="project-num">01 / labor</span>
+            <span class="project-num">02 / labor</span>
             <h3>Beyond U-3: Labor Market Dashboard</h3>
             <p class="project-tags">
               <span class="tag">Python</span>
@@ -344,12 +422,12 @@
         </div>
       </article>
 
-      <!-- 02 SPY Volatility -->
+      <!-- 03 SPY Volatility -->
       <article class="project" style="--accent: #ff7e6b; --accent-soft: rgba(255,126,107,.14);">
         <div class="project-glow"></div>
         <header class="project-head">
           <div class="project-headl">
-            <span class="project-num">02 / risk</span>
+            <span class="project-num">03 / risk</span>
             <h3>S&amp;P 500 Volatility Prediction</h3>
             <p class="project-tags">
               <span class="tag">Python</span>
@@ -404,12 +482,12 @@
         </div>
       </article>
 
-      <!-- 03 Bayesian -->
+      <!-- 04 Bayesian -->
       <article class="project" style="--accent: #c89eff; --accent-soft: rgba(200,158,255,.14);">
         <div class="project-glow"></div>
         <header class="project-head">
           <div class="project-headl">
-            <span class="project-num">03 / inference</span>
+            <span class="project-num">04 / inference</span>
             <h3>Bayesian Hierarchical Modeling</h3>
             <p class="project-tags">
               <span class="tag">R</span>
@@ -457,12 +535,12 @@
         </div>
       </article>
 
-      <!-- 04 Amazon DCF -->
+      <!-- 05 Amazon DCF -->
       <article class="project" style="--accent: #e8b563; --accent-soft: rgba(232,181,99,.14);">
         <div class="project-glow"></div>
         <header class="project-head">
           <div class="project-headl">
-            <span class="project-num">04 / valuation</span>
+            <span class="project-num">05 / valuation</span>
             <h3>Amazon, Inc. &mdash; DCF &amp; Equity Valuation</h3>
             <p class="project-tags">
               <span class="tag">Excel</span>
@@ -487,12 +565,12 @@
         </ul>
       </article>
 
-      <!-- 05 Endowment -->
+      <!-- 06 Endowment -->
       <article class="project" style="--accent: #6ec5a8; --accent-soft: rgba(110,197,168,.14);">
         <div class="project-glow"></div>
         <header class="project-head">
           <div class="project-headl">
-            <span class="project-num">05 / research</span>
+            <span class="project-num">06 / research</span>
             <h3>University Endowment &amp; Resource Allocation</h3>
             <p class="project-tags">
               <span class="tag">Excel</span>
@@ -634,10 +712,10 @@
       </header>
 
       <p class="contact-lede">
-        I'm actively recruiting for <em>summer 2026</em> internships in
-        <b>quantitative research</b>, <b>equity research</b>, <b>actuarial</b>,
-        and <b>data / risk analytics</b>. If any of that sounds like a fit, I'd
-        love to hear from you.
+        I'm actively recruiting for <em>winter 2026 &amp; summer 2027</em>
+        internships and full-time roles in <b>quantitative research</b>,
+        <b>equity research</b>, <b>actuarial</b>, and <b>data / risk
+        analytics</b>. If any of that sounds like a fit, I'd love to hear from you.
       </p>
 
       <div class="contact-grid">
