@@ -147,7 +147,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 /* ---------- scroll reveal for sections/cards ---------- */
 (function scrollReveal() {
   const targets = document.querySelectorAll(
-    '.project, .job, .skill-block, .coursework, .profile-card, .contact-card, .now-box, .metric-card, .section-head, .timeline'
+    '.project, .job, .skill-block, .coursework, .profile-card, .contact-card, .now-box, .metric-card, .section-head, .timeline, .personal-card'
   );
   targets.forEach((el) => el.classList.add('observe'));
 
