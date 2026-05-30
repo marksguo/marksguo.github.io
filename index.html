@@ -279,7 +279,7 @@
           <li>97.5% Historical-Simulation <b>VaR &amp; Expected Shortfall</b> (with parametric &amp; Monte-Carlo Student-t comparisons), stress-calibrated and liquidity-horizon-adjusted, across a 6-asset book (<b>29,000+</b> daily obs, 2007&ndash;26).</li>
           <li>Computes an <b>Internal-Models vs Standardised-Approach</b> capital charge under the Basel III <b>output floor</b> &mdash; here the SA floor binds at <b>11.2%</b> of notional.</li>
           <li>Weekly <b>Acerbi-Szekely</b> ES backtest with Kupiec &amp; Christoffersen tests; surfaced a <b>54%-of-weeks</b> failure rate revealing the procyclicality of rolling-window ES.</li>
-          <li>Engineered end-to-end: <b>pytest + GitHub Actions CI</b>, a Dockerized stack, daily Task-Scheduler automation, and a Claude-API narrative generator.</li>
+          <li>Engineered end-to-end: <b>pytest + GitHub Actions CI</b>, a Dockerized stack, and a <b>daily cloud run</b> (Actions cron) whose event detector flags regime shifts, ES spikes &amp; backtest breaches, then auto-publishes <b>Claude-written risk-desk recaps</b> with rendered risk cards.</li>
           <li>Architected by directing <b>Claude Code (agentic AI)</b>, with every risk function validated against hand-checked results as the human-in-the-loop.</li>
         </ul>
 
