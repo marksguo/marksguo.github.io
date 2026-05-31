@@ -1,769 +1,835 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Marks Guo — Statistics &amp; Finance</title>
-<meta name="description" content="Marks Guo — junior at the University of Rochester studying Statistics & Finance. Quantitative research, risk modeling, and labor market analytics." />
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="styles.css" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marks Guo | Statistics &amp; Finance</title>
+  <meta name="description"
+    content="Marks Guo — junior at the University of Rochester studying Statistics & Finance. Quantitative research, risk modeling, and labor market analytics." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
-<!-- ambient layers -->
-<div class="cursor-glow" aria-hidden="true"></div>
-<div class="aurora" aria-hidden="true">
-  <div class="aurora-blob a"></div>
-  <div class="aurora-blob b"></div>
-  <div class="aurora-blob c"></div>
-</div>
-<div class="grain" aria-hidden="true"></div>
-
-<!-- nav -->
-<header class="nav">
-  <div class="nav-inner">
-    <a href="#top" class="brand">
-      <span class="brand-mark">MG</span>
-      <span class="brand-name">marks_guo</span>
-    </a>
-    <nav class="nav-links" id="navLinks">
-      <a href="#about" data-section="about">about</a>
-      <a href="#more" data-section="more">more</a>
-      <a href="#projects" data-section="projects">work</a>
-      <a href="#skills" data-section="skills">skills</a>
-      <a href="#experience" data-section="experience">experience</a>
-      <a href="#contact" data-section="contact">contact</a>
-      <span class="nav-indicator" id="navIndicator"></span>
-    </nav>
-    <a href="assets/Marks_Guo_Resume.pdf" class="nav-cta" target="_blank" rel="noopener">
-      <span>resume.pdf</span>
-      <span class="arrow">&darr;</span>
-    </a>
+  <!-- ambient layers -->
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="aurora" aria-hidden="true">
+    <div class="aurora-blob a"></div>
+    <div class="aurora-blob b"></div>
+    <div class="aurora-blob c"></div>
   </div>
-</header>
+  <div class="grain" aria-hidden="true"></div>
 
-<main id="top">
+  <!-- nav -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#top" class="brand">
+        <span class="brand-mark">MG</span>
+        <span class="brand-name">marks_guo</span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about" data-section="about">about</a>
+        <a href="#more" data-section="more">more</a>
+        <a href="#projects" data-section="projects">work</a>
+        <a href="#skills" data-section="skills">skills</a>
+        <a href="#experience" data-section="experience">experience</a>
+        <a href="#contact" data-section="contact">contact</a>
+        <span class="nav-indicator" id="navIndicator"></span>
+      </nav>
+      <a href="assets/Marks_Guo_Resume.pdf" class="nav-cta" target="_blank" rel="noopener">
+        <span>resume.pdf</span>
+        <span class="arrow">&darr;</span>
+      </a>
+    </div>
+  </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
+  <main id="top">
 
-      <div class="hero-eyebrow">
-        <span class="pulse-dot"></span>
-        <span class="reveal">open to <strong>winter 2026 &amp; summer 2027 internships</strong></span>
-        <span class="dot-sep">&middot;</span>
-        <span class="reveal">Charlotte, NC</span>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+
+        <div class="hero-eyebrow">
+          <span class="pulse-dot"></span>
+          <span class="reveal">open to <strong>winter 2026 &amp; summer 2027 internships</strong></span>
+          <span class="dot-sep">&middot;</span>
+          <span class="reveal">Charlotte, NC</span>
+        </div>
+
+        <h1 class="hero-name">
+          <span class="word reveal-up">Marks Guo<span class="period">.</span></span>
+        </h1>
+
+        <div class="hero-rotator reveal-up" style="--d: .12s">
+          <span class="rotator-fixed">currently thinking about </span>
+          <span class="rotator-wrap" aria-hidden="true">
+            <ul class="rotator-list" id="rotator">
+              <li>quantitative research.</li>
+              <li>risk models.</li>
+              <li>labor analytics.</li>
+              <li>Bayesian inference.</li>
+              <li>equity valuations.</li>
+            </ul>
+          </span>
+        </div>
+
+        <p class="hero-lede reveal-up" style="--d: .20s">
+          Hi, I'm Marks, a Statistics &amp; Finance student at the
+          <em>University of Rochester</em>. I like data analytics,
+          statistical modeling, and quantitative risk. I also really like to answer problems and find patterns.
+        </p>
+
+        <div class="hero-stats reveal-up" style="--d: .28s">
+          <div class="stat">
+            <span class="stat-num" data-target="3.70" data-decimals="2">0.00</span>
+            <span class="stat-lab">GPA / 4.00</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-target="4800" data-suffix="+">0</span>
+            <span class="stat-lab">daily returns modeled</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-target="14">0</span>
+            <span class="stat-lab">FRED series in pipeline</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-target="4">0</span>
+            <span class="stat-lab">languages spoken</span>
+          </div>
+        </div>
+
+        <div class="hero-cta reveal-up" style="--d: .36s">
+          <a href="#projects" class="btn primary magnetic">
+            browse projects
+            <span class="btn-arrow">&rarr;</span>
+          </a>
+          <a href="mailto:marksguo2005@gmail.com" class="btn ghost magnetic">
+            get in touch
+          </a>
+        </div>
+
       </div>
 
-      <h1 class="hero-name">
-        <span class="word reveal-up">Marks Guo<span class="period">.</span></span>
-      </h1>
+      <!-- scroll cue -->
+      <div class="scroll-cue" aria-hidden="true">
+        <span>scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
 
-      <div class="hero-rotator reveal-up" style="--d: .12s">
-        <span class="rotator-fixed">currently thinking about </span>
-        <span class="rotator-wrap" aria-hidden="true">
-          <ul class="rotator-list" id="rotator">
-            <li>quantitative research.</li>
-            <li>risk models.</li>
-            <li>labor analytics.</li>
-            <li>Bayesian inference.</li>
-            <li>equity valuations.</li>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-num">/ 01</span>
+          <h2 class="section-h"><span class="hash">#</span> about</h2>
+        </header>
+
+        <div class="two-col">
+          <div class="prose">
+            <p class="lead">
+              I'm a junior at the <strong>University of Rochester</strong> pursuing a
+              double major in <strong>Statistics</strong> and <strong>Finance</strong>,
+              with a Certificate in Actuarial Studies in progress and a place on the
+              Dean's List every semester.
+            </p>
+            <p>
+              My work sits at combining quantitative methods and capital
+              markets &mdash; Bayesian inference, regression diagnostics, financial
+              statement analysis. I also make sure the models used are credible and trustworthy.
+            </p>
+            <p>
+              I've recently been really into running research projects. From raw FRED pulls and
+              PostgreSQL schemas, through diagnostics and convergence checks, to
+              published Tableau dashboards and equity research write-ups. The boring
+              stuff is half the work, but its also where most analyses quietly go wrong.
+            </p>
+
+            <div class="now-box">
+              <span class="now-label">/ currently</span>
+              <ul class="now-list">
+                <li><span class="dot c1"></span> exploring new agentic AI tools</li>
+                <li><span class="dot c2"></span> analyzing different types of Expected Shortfall in the market</li>
+                <li><span class="dot c3"></span> extending SPY volatility work into a GARCH(1,1) baseline
+                </li>
+                <li><span class="dot c4"></span> shipping the live <em>Beyond U-3</em> labor dashboard</li>
+              </ul>
+            </div>
+          </div>
+
+          <aside class="profile-card">
+            <div class="card-head">
+              <span class="card-mark">MG</span>
+              <div>
+                <div class="card-title">Marks Guo</div>
+                <div class="card-sub">stats &middot; finance &middot; rochester '27</div>
+              </div>
+            </div>
+            <div class="card-row"><span class="card-k">school</span><span class="card-v">U. of Rochester</span></div>
+            <div class="card-row"><span class="card-k">grad</span><span class="card-v">June 2027</span></div>
+            <div class="card-row"><span class="card-k">major</span><span class="card-v">B.S. Statistics</span></div>
+            <div class="card-row"><span class="card-k">major</span><span class="card-v">B.S. Finance</span></div>
+            <div class="card-row"><span class="card-k">gpa</span><span class="card-v">3.70 / 4.00</span></div>
+            <div class="card-row"><span class="card-k">cert.</span><span class="card-v">Actuarial Studies
+                <em>(WIP)</em></span></div>
+            <div class="card-row"><span class="card-k">location</span><span class="card-v">Charlotte, NC</span></div>
+            <div class="card-row"><span class="card-k">languages</span><span class="card-v">EN &middot; ZH &middot; YUE
+                &middot; FZ</span></div>
+            <div class="card-row"><span class="card-k">status</span><span class="card-v"><span
+                  class="pulse-dot mini"></span> recruiting</span></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- MORE ABOUT ME -->
+    <section id="more" class="section more-section">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-num">/ 02</span>
+          <h2 class="section-h"><span class="hash">#</span> about me</h2>
+          <p class="section-sub">Some stuff about me outside of my work</p>
+        </header>
+
+        <div class="personal-grid">
+
+          <article class="personal-card" style="--accent: #e88ab8;">
+            <span class="pc-tab">/ home</span>
+            <h3>Where I'm from</h3>
+            <p class="pc-placeholder">I was born in Brooklyn, NY, but spent my first 5 years growing up in Fuzhou, a
+              city in China's Fujian province, where my parents are from. However, we came back to the states and I grew
+              up in Charlotte, NC, until I left for College at the University of Rochester.</p>
+          </article>
+
+          <article class="personal-card" style="--accent: #e8b563;">
+            <span class="pc-tab">/ controller</span>
+            <h3>What I'm playing</h3>
+            <p class="pc-placeholder">What I play when I need to turn my brain off: Washington Post Crosswords, NYT Wordle, Clash Royale (Ultimate Champion), LOL: Wild Rift (Grandmaster), and Teamfight Tactics (Set 15 peak Challenger). Also recently been into competitive Pokemon, since I collected cards as a kid.</p>
+          </article>
+
+          <article class="personal-card" style="--accent: #6ec5a8;">
+            <span class="pc-tab">/ ears</span>
+            <h3>What I'm listening to</h3>
+            <p class="pc-placeholder">I listen to a lot of indie, rock, rap, pop, alternative, rnb, etc. Here's everything because I am not a playlist person: <a href="https://open.spotify.com/playlist/4RxD2C1NT8S0OEM8ofKCxx?si=5c66a73985ab4736" target="_blank" rel="noopener noreferrer" style="color:#58a6ff;">Marks's Playlist</a>. If you have any music recommendations, I am always (and I mean genuinely always) interested!</p>
+          </article>
+
+          <article class="personal-card" style="--accent: #c89eff;">
+            <span class="pc-tab">/ outside work</span>
+            <h3>What I'm into</h3>
+            <p class="pc-placeholder">Exploring new music genres, keeping up with AI news and new AI tools, and math (originally wanted to be a math major!). I'm also picking back up piano and drawing, things I did as a kid that I dropped along the way.</p>
+          </article>
+
+          <article class="personal-card" style="--accent: #8b80ff;">
+            <span class="pc-tab">/ side quests</span>
+            <h3>If I had infinite time</h3>
+            <p class="pc-placeholder">I wan't to explore and travel to a bunch of different countries and embracing the culture. In middle school, I went on a trip sponsored by Education First to Costa Rica, and that is one of my most eye-opening and enjoyable experiences I have ever been on.</p>
+          </article>
+
+          <article class="personal-card" style="--accent: #ff7e6b;">
+            <span class="pc-tab">/ random</span>
+            <h3>A small fact about me</h3>
+            <p class="pc-placeholder">My birthday (7/16), my older brother's (7/13), and my dad's (7/14) are all in the same week. As a kid, we used to go to IHOP on all three days because I really liked their hashbrowns, so now IHOP is my comfort food.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section alt">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-num">/ 03</span>
+          <h2 class="section-h"><span class="hash">#</span> selected work</h2>
+          <p class="section-sub">Independent research &mdash; full pipeline, code, and write-up on each.</p>
+        </header>
+
+        <!-- 01 FRTB Risk Monitor -->
+        <article class="project" style="--accent: #58a6ff; --accent-soft: rgba(88,166,255,.14);">
+          <div class="project-glow"></div>
+          <header class="project-head">
+            <div class="project-headl">
+              <span class="project-num">01 / frtb</span>
+              <h3>FRTB IMA Risk Monitor</h3>
+              <p class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Plotly Dash</span>
+                <span class="tag">Docker</span>
+                <span class="tag">CI/CD</span>
+                <span class="tag">Claude API</span>
+              </p>
+            </div>
+            <span class="project-when">May 2026 &mdash; current</span>
+          </header>
+
+          <p class="project-desc">
+            A production-grade, automated risk system computing Basel III
+            <em>FRTB</em> Internal-Models-Approach capital &mdash; Value at Risk,
+            Expected Shortfall, stress calibration, and a Standardised-Approach
+            comparison &mdash; on a multi-asset book, served to a
+            <b>live, deployed dashboard</b>.
+          </p>
+
+          <ul class="project-points">
+            <li>97.5% Historical-Simulation <b>VaR &amp; Expected Shortfall</b> (with parametric &amp; Monte-Carlo
+              Student-t comparisons), stress-calibrated and liquidity-horizon-adjusted, across a 6-asset book
+              (<b>29,000+</b> daily obs, 2007&ndash;26).</li>
+            <li>Computes an <b>Internal-Models vs Standardised-Approach</b> capital charge under the Basel III <b>output
+                floor</b> &mdash; here the SA floor binds at <b>11.2%</b> of notional.</li>
+            <li>Weekly <b>Acerbi-Szekely</b> ES backtest with Kupiec &amp; Christoffersen tests; surfaced a
+              <b>54%-of-weeks</b> failure rate revealing the procyclicality of rolling-window ES.</li>
+            <li>Engineered end-to-end: <b>pytest + GitHub Actions CI</b>, a Dockerized stack, and a <b>daily cloud
+                run</b> (Actions cron) whose event detector flags regime shifts, ES spikes &amp; backtest breaches, then
+              auto-publishes <b>Claude-written risk-desk recaps</b> with rendered risk cards.</li>
+            <li>Architected by directing <b>Claude Code (agentic AI)</b>, with every risk function validated against
+              hand-checked results as the human-in-the-loop.</li>
           </ul>
-        </span>
-      </div>
 
-      <p class="hero-lede reveal-up" style="--d: .20s">
-        Hi, I'm Marks &mdash; a Statistics &amp; Finance student at the
-        <em>University of Rochester</em> who's genuinely into data analytics,
-        statistical modeling, and quantitative risk. Lately I've been building a
-        live <em>FRTB risk monitor</em> that computes regulatory capital and
-        backtests itself, and digging through FRED data and labor statistics to
-        find the signals that actually move the needle &mdash; I like turning
-        messy data into things that hold up under a second look.
-      </p>
+          <div class="project-viz horizontal">
+            <div class="metric-card">
+              <span class="metric-k">ES 97.5%</span>
+              <span class="metric-v">1.56%</span>
+              <span class="metric-sub">liq-adj 3.36%</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-k">capital</span>
+              <span class="metric-v">11.2%</span>
+              <span class="metric-sub">SA floor binds</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-k">backtest</span>
+              <span class="metric-v">54%</span>
+              <span class="metric-sub">weeks fail</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-k">history</span>
+              <span class="metric-v">29k+</span>
+              <span class="metric-sub">obs &middot; 2007&ndash;26</span>
+            </div>
+          </div>
 
-      <div class="hero-stats reveal-up" style="--d: .28s">
-        <div class="stat">
-          <span class="stat-num" data-target="3.70" data-decimals="2">0.00</span>
-          <span class="stat-lab">GPA / 4.00</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num" data-target="4800" data-suffix="+">0</span>
-          <span class="stat-lab">daily returns modeled</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num" data-target="14">0</span>
-          <span class="stat-lab">FRED series in pipeline</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num" data-target="4">0</span>
-          <span class="stat-lab">languages spoken</span>
-        </div>
-      </div>
+          <figure class="project-shot" style="margin:1.25rem 0 0;">
+            <img src="assets/frtb-dashboard.png" loading="lazy"
+              alt="FRTB risk dashboard: ES vs VaR, volatility regime, per-asset risk contribution, and weekly backtest"
+              style="width:100%; border-radius:12px; border:1px solid rgba(255,255,255,.08); display:block;" />
+            <figcaption style="margin:.6rem 0 0; font-size:.78rem; color:#9aa0aa;">Reading the four panels:</figcaption>
+            <ul
+              style="list-style:none; padding:0; margin:.4rem 0 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:.35rem .9rem; font-size:.78rem; color:#9aa0aa; line-height:1.45;">
+              <li><b style="color:#58a6ff;">ES vs VaR</b> &mdash; average tail-day loss vs the loss threshold, over 252
+                days.</li>
+              <li><b style="color:#58a6ff;">Volatility regime</b> &mdash; shaded background: green calm, amber elevated,
+                red stressed.</li>
+              <li><b style="color:#58a6ff;">Asset contribution</b> &mdash; which holding drives today's potential
+                bad-day loss.</li>
+              <li><b style="color:#58a6ff;">Backtest (Z2)</b> &mdash; weekly model check; green passes, red
+                underestimates risk.</li>
+            </ul>
+          </figure>
 
-      <div class="hero-cta reveal-up" style="--d: .36s">
-        <a href="#projects" class="btn primary magnetic">
-          browse projects
-          <span class="btn-arrow">&rarr;</span>
-        </a>
-        <a href="mailto:marksguo2005@gmail.com" class="btn ghost magnetic">
-          get in touch
-        </a>
-      </div>
+          <div class="project-links">
+            <a href="https://frtb-ima-risk-monitor.onrender.com/" target="_blank" rel="noopener">live dashboard
+              <span>&rarr;</span></a>
+            <a href="https://github.com/marksguo/frtb-ima-risk-monitor" target="_blank" rel="noopener">github
+              <span>&rarr;</span></a>
+          </div>
+        </article>
 
-    </div>
+        <!-- 02 Labor Dashboard -->
+        <article class="project" style="--accent: #8b80ff; --accent-soft: rgba(139,128,255,.14);">
+          <div class="project-glow"></div>
+          <header class="project-head">
+            <div class="project-headl">
+              <span class="project-num">02 / labor</span>
+              <h3>Beyond U-3: Labor Market Dashboard</h3>
+              <p class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Tableau</span>
+                <span class="tag">FRED API</span>
+                <span class="tag">SQLAlchemy</span>
+              </p>
+            </div>
+            <span class="project-when">May 2026 &mdash; current</span>
+          </header>
 
-    <!-- scroll cue -->
-    <div class="scroll-cue" aria-hidden="true">
-      <span>scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </section>
-
-
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <div class="container">
-      <header class="section-head">
-        <span class="section-num">/ 01</span>
-        <h2 class="section-h"><span class="hash">#</span> about</h2>
-      </header>
-
-      <div class="two-col">
-        <div class="prose">
-          <p class="lead">
-            I'm a junior at the <strong>University of Rochester</strong> pursuing a
-            double major in <strong>Statistics</strong> and <strong>Finance</strong>,
-            with a Certificate in Actuarial Studies in progress and a place on the
-            Dean's List every semester.
-          </p>
-          <p>
-            My work sits at the intersection of quantitative methods and capital
-            markets &mdash; Bayesian inference, regression diagnostics, financial
-            statement analysis, and the kind of careful data engineering that lets
-            a model actually be trusted.
-          </p>
-          <p>
-            I like running research projects end-to-end: from raw FRED pulls and
-            PostgreSQL schemas, through diagnostics and convergence checks, to
-            published Tableau dashboards and equity research write-ups. The boring
-            plumbing is half the work, and where most analyses quietly go wrong.
+          <p class="project-desc">
+            An automated macro dashboard that quantifies how the official U-3
+            unemployment rate <em>systematically understates</em> labor market
+            stress &mdash; and tracks the leading indicators that actually signal
+            turning points.
           </p>
 
-          <div class="now-box">
-            <span class="now-label">/ currently</span>
-            <ul class="now-list">
-              <li><span class="dot c1"></span> shipping the live <em>Beyond U-3</em> labor dashboard</li>
-              <li><span class="dot c2"></span> extending SPY volatility work into a GARCH(1,1) baseline</li>
-              <li><span class="dot c3"></span> reading <em>Hull</em> &middot; <em>Bayesian Data Analysis</em> (Gelman)</li>
-              <li><span class="dot c4"></span> studying for the SOA Exam P</li>
+          <div class="project-body">
+            <ul class="project-points">
+              <li>Designed a normalized PostgreSQL database storing <b>14 FRED time series</b> across 30+ years of U.S.
+                labor data.</li>
+              <li>Quantified U-3 understates labor stress by <b>4.42 pts</b> in normal periods, <b>5.37 pts</b> in the
+                Great Recession.</li>
+              <li>Built a Python pipeline (FRED + pandas + SQLAlchemy) resampling mixed-frequency series and computing
+                derived metrics live.</li>
+              <li>Scheduled monthly via Windows Task Scheduler &mdash; production database, zero manual refresh.</li>
+              <li>Tracks 8 leading indicators including temp help (<b>−21.4%</b> from peak), quits rate, 10Y&ndash;2Y
+                spread, saving rate.</li>
+            </ul>
+
+            <!-- mini live-snapshot chart -->
+            <div class="project-viz">
+              <div class="viz-head">
+                <span class="viz-title">snapshot &middot; apr 2026</span>
+                <span class="viz-dot">●&nbsp;live</span>
+              </div>
+
+              <!-- inline SVG sparkline: U-3 vs U-6 -->
+              <div class="spark-wrap">
+                <div class="spark-row">
+                  <span class="spark-lab">U-3</span>
+                  <svg class="spark" viewBox="0 0 200 40" preserveAspectRatio="none">
+                    <path class="spark-path c-blue"
+                      d="M0.0,36.0 L5.7,30.2 L11.4,30.2 L17.1,33.1 L22.9,27.3 L28.6,27.3 L34.3,21.5 L40.0,27.3 L45.7,24.4 L51.4,27.3 L57.1,21.5 L62.9,21.5 L68.6,21.5 L74.3,21.5 L80.0,15.6 L85.7,12.7 L91.4,12.7 L97.1,15.6 L102.9,15.6 L108.6,12.7 L114.3,15.6 L120.0,18.5 L125.7,12.7 L131.4,12.7 L137.1,12.7 L142.9,9.8 L148.6,15.6 L154.3,9.8 L160.0,9.8 L165.7,6.9 L171.4,4.0 L177.1,6.9 L182.9,9.8 L188.6,6.9 L194.3,9.8 L200.0,9.8" />
+                  </svg>
+                  <span class="spark-val">4.3%</span>
+                </div>
+                <div class="spark-row">
+                  <span class="spark-lab">U-6</span>
+                  <svg class="spark" viewBox="0 0 200 40" preserveAspectRatio="none">
+                    <path class="spark-path c-coral"
+                      d="M0.0,36.0 L5.7,34.5 L11.4,31.4 L17.1,34.5 L22.9,28.4 L28.6,29.9 L34.3,26.9 L40.0,29.9 L45.7,26.9 L51.4,26.9 L57.1,25.3 L62.9,25.3 L68.6,23.8 L74.3,23.8 L80.0,23.8 L85.7,17.7 L91.4,17.7 L97.1,19.2 L102.9,19.2 L108.6,19.2 L114.3,20.8 L120.0,22.3 L125.7,14.7 L131.4,16.2 L137.1,17.7 L142.9,17.7 L148.6,19.2 L154.3,16.2 L160.0,13.1 L165.7,13.1 L171.4,4.0 L177.1,8.6 L182.9,13.1 L188.6,16.2 L194.3,14.7 L200.0,11.6" />
+                  </svg>
+                  <span class="spark-val">8.2%</span>
+                </div>
+                <div class="spark-row">
+                  <span class="spark-lab">temp.helps</span>
+                  <svg class="spark" viewBox="0 0 200 40" preserveAspectRatio="none">
+                    <path class="spark-path c-amber"
+                      d="M0.0,4.0 L5.7,6.3 L11.4,8.7 L17.1,10.3 L22.9,11.9 L28.6,13.0 L34.3,15.7 L40.0,19.1 L45.7,18.6 L51.4,19.8 L57.1,20.2 L62.9,21.4 L68.6,22.3 L74.3,24.3 L80.0,25.4 L85.7,26.5 L91.4,27.9 L97.1,29.0 L102.9,28.8 L108.6,29.5 L114.3,29.7 L120.0,30.1 L125.7,30.4 L131.4,30.6 L137.1,31.5 L142.9,32.2 L148.6,32.8 L154.3,33.5 L160.0,34.4 L165.7,35.8 L171.4,34.9 L177.1,36.0 L182.9,34.6 L188.6,34.4 L194.3,34.0 L200.0,33.5" />
+                  </svg>
+                  <span class="spark-val warn">&minus;21.4%</span>
+                </div>
+                <div class="spark-row">
+                  <span class="spark-lab">yield 10y&minus;2y</span>
+                  <svg class="spark" viewBox="0 0 200 40" preserveAspectRatio="none">
+                    <path class="spark-path c-mint"
+                      d="M0.0,28.6 L5.7,35.2 L11.4,36.0 L17.1,32.1 L22.9,30.3 L28.6,22.9 L34.3,25.1 L40.0,26.2 L45.7,22.8 L51.4,24.2 L57.1,25.1 L62.9,24.1 L68.6,24.9 L74.3,26.1 L80.0,22.4 L85.7,19.4 L91.4,15.5 L97.1,15.0 L102.9,15.5 L108.6,14.2 L114.3,10.4 L120.0,12.7 L125.7,11.3 L131.4,7.5 L137.1,7.4 L142.9,7.6 L148.6,7.3 L154.3,6.3 L160.0,6.5 L165.7,6.7 L171.4,6.7 L177.1,4.7 L182.9,4.0 L188.6,4.5 L194.3,6.9 L200.0,7.1" />
+                  </svg>
+                  <span class="spark-val">+0.52%</span>
+                </div>
+                <div class="spark-row">
+                  <span class="spark-lab">saving rate</span>
+                  <svg class="spark" viewBox="0 0 200 40" preserveAspectRatio="none">
+                    <path class="spark-path c-rose"
+                      d="M0.0,7.4 L5.7,10.9 L11.4,14.3 L17.1,13.1 L22.9,16.6 L28.6,15.4 L34.3,13.1 L40.0,13.1 L45.7,4.0 L51.4,7.4 L57.1,9.7 L62.9,10.9 L68.6,10.9 L74.3,12.0 L80.0,16.6 L85.7,17.7 L91.4,22.3 L97.1,20.0 L102.9,21.1 L108.6,28.0 L114.3,18.9 L120.0,17.7 L125.7,18.9 L131.4,14.3 L137.1,21.1 L142.9,24.6 L148.6,25.7 L154.3,26.9 L160.0,28.0 L165.7,31.4 L171.4,31.4 L177.1,32.6 L182.9,25.7 L188.6,32.6 L194.3,36.0" />
+                  </svg>
+                  <span class="spark-val warn">3.6%</span>
+                </div>
+                <div class="spark-row">
+                  <span class="spark-lab">prime LFPR</span>
+                  <svg class="spark" viewBox="0 0 200 40" preserveAspectRatio="none">
+                    <path class="spark-path c-blue"
+                      d="M0.0,28.0 L5.7,24.0 L11.4,28.0 L17.1,28.0 L22.9,24.0 L28.6,28.0 L34.3,28.0 L40.0,36.0 L45.7,32.0 L51.4,24.0 L57.1,28.0 L62.9,24.0 L68.6,20.0 L74.3,16.0 L80.0,4.0 L85.7,8.0 L91.4,12.0 L97.1,24.0 L102.9,24.0 L108.6,28.0 L114.3,24.0 L120.0,24.0 L125.7,32.0 L131.4,20.0 L137.1,28.0 L142.9,24.0 L148.6,28.0 L154.3,16.0 L160.0,16.0 L171.4,12.0 L177.1,12.0 L182.9,4.0 L188.6,8.0 L194.3,12.0 L200.0,12.0" />
+                  </svg>
+                  <span class="spark-val ok">83.8%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-links">
+            <a href="labor-dashboard.html">case study <span>&rarr;</span></a>
+            <a href="https://github.com/marksguo/labor-market-dashboard" target="_blank" rel="noopener">github
+              <span>&rarr;</span></a>
+            <a href="https://public.tableau.com/app/profile/guomarks" target="_blank" rel="noopener">tableau dashboard
+              <span>&rarr;</span></a>
+          </div>
+        </article>
+
+        <!-- 03 SPY Volatility -->
+        <article class="project" style="--accent: #ff7e6b; --accent-soft: rgba(255,126,107,.14);">
+          <div class="project-glow"></div>
+          <header class="project-head">
+            <div class="project-headl">
+              <span class="project-num">03 / risk</span>
+              <h3>S&amp;P 500 Volatility Prediction</h3>
+              <p class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">R</span>
+                <span class="tag">OLS</span>
+                <span class="tag">WLS</span>
+                <span class="tag">Robust M-Est.</span>
+              </p>
+            </div>
+            <span class="project-when">Jan &mdash; May 2026</span>
+          </header>
+
+          <p class="project-desc">
+            Built and compared three regression families on <b>4,800+ daily S&amp;P 500 returns
+              (2007&ndash;2026)</b> to predict realized volatility and quantify risk persistence
+            &mdash; the empirical backbone of any dynamic VaR framework.
+          </p>
+
+          <ul class="project-points">
+            <li>Confirmed statistically significant <b>volatility clustering</b> (<code>p &lt; 0.0001</code>); directly
+              supports dynamic VaR and portfolio risk frameworks used in industry.</li>
+            <li>Validated via 70/30 train-test split with full diagnostic suite &mdash; heteroscedasticity testing, ACF
+              analysis, Cook's distance influence detection.</li>
+            <li>Compared OLS, WLS, and Robust M-estimation to surface which assumptions hold once you stop pretending
+              returns are i.i.d. normal.</li>
+          </ul>
+
+          <div class="project-viz horizontal">
+            <div class="metric-card">
+              <span class="metric-k">n</span>
+              <span class="metric-v">4,800+</span>
+              <span class="metric-sub">daily returns</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-k">window</span>
+              <span class="metric-v">2007&ndash;26</span>
+              <span class="metric-sub">19 yrs &middot; 2 regimes</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-k">clustering</span>
+              <span class="metric-v">p&lt;.0001</span>
+              <span class="metric-sub">significant</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-k">split</span>
+              <span class="metric-v">70 / 30</span>
+              <span class="metric-sub">train / test</span>
+            </div>
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/marksguo/SPY-Volatility-Modeling" target="_blank" rel="noopener">
+              github.com/marksguo/SPY-Volatility-Modeling <span>&rarr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 04 Bayesian -->
+        <article class="project" style="--accent: #c89eff; --accent-soft: rgba(200,158,255,.14);">
+          <div class="project-glow"></div>
+          <header class="project-head">
+            <div class="project-headl">
+              <span class="project-num">04 / inference</span>
+              <h3>Bayesian Hierarchical Modeling</h3>
+              <p class="project-tags">
+                <span class="tag">R</span>
+                <span class="tag">Metropolis-Hastings</span>
+                <span class="tag">MCMC</span>
+                <span class="tag">Diagnostics</span>
+              </p>
+            </div>
+            <span class="project-when">Sep 2025 &mdash; Mar 2026</span>
+          </header>
+
+          <p class="project-desc">
+            Implemented a hierarchical Bayesian model from scratch with a custom
+            Metropolis-Hastings sampler &mdash; not a library call &mdash; to estimate
+            group-level probabilities and quantify uncertainty rigorously.
+          </p>
+
+          <ul class="project-points">
+            <li>Ran <b>4 Markov chains × 100,000 iterations</b> each; tuned proposal step sizes for healthy acceptance
+              rates.</li>
+            <li>Confirmed convergence via Gelman-Rubin diagnostics (<code>PSRF = 1.0</code>); effective sample sizes
+              exceeding <b>26,000</b> across all chains.</li>
+            <li>Delivered findings with 95% credible intervals and actionable business recommendations translated for
+              non-technical stakeholders.</li>
+          </ul>
+
+          <div class="project-viz horizontal">
+            <div class="metric-card">
+              <span class="metric-k">chains</span>
+              <span class="metric-v">4</span>
+              <span class="metric-sub">parallel</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-k">iter / chain</span>
+              <span class="metric-v">100k</span>
+              <span class="metric-sub">incl. burn-in</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-k">PSRF</span>
+              <span class="metric-v">1.0</span>
+              <span class="metric-sub">converged</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-k">ESS</span>
+              <span class="metric-v">26k+</span>
+              <span class="metric-sub">all chains</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 05 Amazon DCF -->
+        <article class="project" style="--accent: #e8b563; --accent-soft: rgba(232,181,99,.14);">
+          <div class="project-glow"></div>
+          <header class="project-head">
+            <div class="project-headl">
+              <span class="project-num">05 / valuation</span>
+              <h3>Amazon, Inc. &mdash; DCF &amp; Equity Valuation</h3>
+              <p class="project-tags">
+                <span class="tag">Excel</span>
+                <span class="tag">DCF</span>
+                <span class="tag">CAPM / WACC</span>
+                <span class="tag">Sensitivity</span>
+              </p>
+            </div>
+            <span class="project-when">Jan &mdash; Apr 2025</span>
+          </header>
+
+          <p class="project-desc">
+            Built a <b>5-year pro forma model</b> and DCF valuation using
+            CAPM-derived WACC across multiple macroeconomic scenarios; stress-tested
+            beta, WACC, and terminal growth via sensitivity tables. Closed with a
+            structured equity research report and a supported &ldquo;Hold&rdquo;
+            recommendation.
+          </p>
+          <ul class="project-points">
+            <li>Trend, common-size, and ratio analysis across profitability, liquidity, leverage, and default risk.</li>
+            <li>Scenario-conditional WACC and terminal growth bands to make the recommendation robust to the macro
+              assumption.</li>
+          </ul>
+        </article>
+
+        <!-- 06 Endowment -->
+        <article class="project" style="--accent: #6ec5a8; --accent-soft: rgba(110,197,168,.14);">
+          <div class="project-glow"></div>
+          <header class="project-head">
+            <div class="project-headl">
+              <span class="project-num">06 / research</span>
+              <h3>University Endowment &amp; Resource Allocation</h3>
+              <p class="project-tags">
+                <span class="tag">Excel</span>
+                <span class="tag">NACUBO</span>
+                <span class="tag">IPEDS</span>
+                <span class="tag">Faculty Research</span>
+              </p>
+            </div>
+            <span class="project-when">Feb &mdash; Apr 2024</span>
+          </header>
+          <p class="project-desc">
+            Collaborative research with <b>Prof. Michael Rizzo</b> across
+            <b>11 universities</b>. Identified a significant correlation between
+            endowment-per-student and U.S. News rankings &mdash; presented to
+            Economics faculty with data-driven conclusions on institutional
+            resource-allocation tradeoffs.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills" class="section">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-num">/ 04</span>
+          <h2 class="section-h"><span class="hash">#</span> stack &amp; methods</h2>
+        </header>
+
+        <div class="skills-grid">
+          <div class="skill-block" style="--accent: #8b80ff;">
+            <h4>Languages &amp; tools</h4>
+            <ul class="chips">
+              <li>Python</li>
+              <li>R</li>
+              <li>SQL</li>
+              <li>PostgreSQL</li>
+              <li>Excel <em>(advanced)</em></li>
+              <li>Tableau</li>
+              <li>Power BI</li>
+              <li>pandas</li>
+              <li>SQLAlchemy</li>
+              <li>FRED API</li>
+            </ul>
+          </div>
+
+          <div class="skill-block" style="--accent: #ff7e6b;">
+            <h4>Quant &amp; statistics</h4>
+            <ul class="chips">
+              <li>Regression Modeling</li>
+              <li>Bayesian / MCMC</li>
+              <li>Monte Carlo</li>
+              <li>Time Series</li>
+              <li>Heteroscedasticity Diagnostics</li>
+              <li>Hypothesis Testing</li>
+            </ul>
+          </div>
+
+          <div class="skill-block" style="--accent: #e8b563;">
+            <h4>Finance</h4>
+            <ul class="chips">
+              <li>Financial Modeling</li>
+              <li>DCF / WACC / CAPM</li>
+              <li>Sensitivity Analysis</li>
+              <li>Equity Research</li>
+              <li>Financial Statement Analysis</li>
+              <li>Risk Management</li>
+            </ul>
+          </div>
+
+          <div class="skill-block" style="--accent: #6ec5a8;">
+            <h4>Languages spoken</h4>
+            <ul class="chips">
+              <li>English</li>
+              <li>Mandarin</li>
+              <li>Cantonese</li>
+              <li>Fuzhounese</li>
             </ul>
           </div>
         </div>
 
-        <aside class="profile-card">
-          <div class="card-head">
-            <span class="card-mark">MG</span>
-            <div>
-              <div class="card-title">Marks Guo</div>
-              <div class="card-sub">stats &middot; finance &middot; rochester '27</div>
-            </div>
-          </div>
-          <div class="card-row"><span class="card-k">school</span><span class="card-v">U. of Rochester</span></div>
-          <div class="card-row"><span class="card-k">grad</span><span class="card-v">June 2027</span></div>
-          <div class="card-row"><span class="card-k">major</span><span class="card-v">B.S. Statistics</span></div>
-          <div class="card-row"><span class="card-k">major</span><span class="card-v">B.S. Finance</span></div>
-          <div class="card-row"><span class="card-k">gpa</span><span class="card-v">3.70 / 4.00</span></div>
-          <div class="card-row"><span class="card-k">cert.</span><span class="card-v">Actuarial Studies <em>(WIP)</em></span></div>
-          <div class="card-row"><span class="card-k">location</span><span class="card-v">Charlotte, NC</span></div>
-          <div class="card-row"><span class="card-k">languages</span><span class="card-v">EN &middot; ZH &middot; YUE &middot; FZ</span></div>
-          <div class="card-row"><span class="card-k">status</span><span class="card-v"><span class="pulse-dot mini"></span> recruiting</span></div>
-        </aside>
+        <div class="coursework">
+          <h4>Relevant coursework</h4>
+          <p>
+            Statistical Methodology &middot; Financial Statement Analysis &middot;
+            Investments &middot; Statistical Computing in R &middot;
+            Financial Management &middot; Accounting &middot; Corporate Finance
+          </p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
 
-  <!-- MORE ABOUT ME -->
-  <section id="more" class="section more-section">
-    <div class="container">
-      <header class="section-head">
-        <span class="section-num">/ 02</span>
-        <h2 class="section-h"><span class="hash">#</span> about me</h2>
-        <p class="section-sub">The stuff that doesn't fit on a resume. <em>In progress &mdash; I'll keep adding.</em></p>
-      </header>
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section alt">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-num">/ 05</span>
+          <h2 class="section-h"><span class="hash">#</span> experience</h2>
+        </header>
 
-      <div class="personal-grid">
+        <div class="timeline">
+          <article class="job">
+            <span class="timeline-dot" style="--accent: #8b80ff;"></span>
+            <header class="job-head">
+              <div>
+                <h3>China Fun of NC, Inc.</h3>
+                <p class="job-role">Junior Financial &amp; Operations Analyst</p>
+              </div>
+              <div class="job-meta">
+                <span>Sep 2017 &mdash; Jul 2025</span>
+                <span>Charlotte, NC</span>
+              </div>
+            </header>
+            <ul class="project-points">
+              <li>Drove <b>25% revenue growth</b> (~$375K incremental annually) at a $1.5M+ revenue operation via margin
+                expansion and data-driven process improvements across procurement, fulfillment, and labor.</li>
+              <li>Monitored food cost ratios against a ~32% COGS target; identified <b>$10K+ in annual ingredient
+                  savings</b> through vendor renegotiation and waste reduction across $30K+ in monthly procurement.</li>
+              <li>Built a <b>2,000-cell Excel order &amp; financial tracking system</b> integrated with DoorDash &mdash;
+                reconciling $125K+ in monthly revenue across 150+ daily orders.</li>
+              <li>Prepared monthly P&amp;L summaries (revenue, ~28% labor, food cost) and presented to ownership to
+                support operational and budgetary decisions.</li>
+              <li>Reconciled daily POS receipts to bank deposits with <b>&lt;0.5% discrepancy</b>; managed AP and
+                supported quarterly tax documentation for CPA-led filings.</li>
+              <li>Processed bi-weekly payroll for 15+ employees with IRS-compliant tip reporting; trained 10+ staff on
+                POS systems for a <b>30% efficiency gain</b>.</li>
+            </ul>
+          </article>
 
-        <article class="personal-card" style="--accent: #e88ab8;">
-          <span class="pc-tab">/ home</span>
-          <h3>Where I'm from</h3>
-          <p class="pc-placeholder">A line or two about Charlotte, your roots, and the path that brought you to Rochester.</p>
-        </article>
-
-        <article class="personal-card" style="--accent: #e8b563;">
-          <span class="pc-tab">/ shelf</span>
-          <h3>What I'm reading</h3>
-          <p class="pc-placeholder">2&ndash;3 current books. A mix of finance and something else shows range &mdash; novel, history, biography.</p>
-        </article>
-
-        <article class="personal-card" style="--accent: #6ec5a8;">
-          <span class="pc-tab">/ ears</span>
-          <h3>What I'm listening to</h3>
-          <p class="pc-placeholder">Music, podcasts, audiobooks. Specific is more memorable than &ldquo;I like jazz.&rdquo;</p>
-        </article>
-
-        <article class="personal-card" style="--accent: #c89eff;">
-          <span class="pc-tab">/ outside work</span>
-          <h3>What I'm into</h3>
-          <p class="pc-placeholder">Chinese literature &amp; history, math, music &mdash; pick what's actually true now, in your own voice.</p>
-        </article>
-
-        <article class="personal-card" style="--accent: #8b80ff;">
-          <span class="pc-tab">/ side quests</span>
-          <h3>If I had infinite time</h3>
-          <p class="pc-placeholder">The thing you'd build, write, study, or start. Specific dream &gt; vague one.</p>
-        </article>
-
-        <article class="personal-card" style="--accent: #ff7e6b;">
-          <span class="pc-tab">/ random</span>
-          <h3>A small fact about me</h3>
-          <p class="pc-placeholder">Something a recruiter would actually remember. Skip the safe answer.</p>
-        </article>
-
+          <article class="job">
+            <span class="timeline-dot" style="--accent: #6ec5a8;"></span>
+            <header class="job-head">
+              <div>
+                <h3>Tien Ren Cultural &amp; Educational Foundation</h3>
+                <p class="job-role">Lecturer &amp; Event Organizer (2021&ndash;present) &middot; Assistant Lecturer
+                  (2019&ndash;2021)</p>
+              </div>
+              <div class="job-meta">
+                <span>Summer 2015 &mdash; current</span>
+                <span>Indian Trail, NC</span>
+              </div>
+            </header>
+            <ul class="project-points">
+              <li>Delivered <b>30+ educational sessions</b> to ~1,000 youth (ages 14&ndash;20).</li>
+              <li>Organized 3 annual volunteer events at <b>Second Harvest Food Bank of Metrolina</b>.</li>
+            </ul>
+          </article>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section alt">
-    <div class="container">
-      <header class="section-head">
-        <span class="section-num">/ 03</span>
-        <h2 class="section-h"><span class="hash">#</span> selected work</h2>
-        <p class="section-sub">Independent research &mdash; full pipeline, code, and write-up on each.</p>
-      </header>
-
-      <!-- 01 FRTB Risk Monitor -->
-      <article class="project" style="--accent: #58a6ff; --accent-soft: rgba(88,166,255,.14);">
-        <div class="project-glow"></div>
-        <header class="project-head">
-          <div class="project-headl">
-            <span class="project-num">01 / frtb</span>
-            <h3>FRTB IMA Risk Monitor</h3>
-            <p class="project-tags">
-              <span class="tag">Python</span>
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">Plotly Dash</span>
-              <span class="tag">Docker</span>
-              <span class="tag">CI/CD</span>
-              <span class="tag">Claude API</span>
-            </p>
-          </div>
-          <span class="project-when">May 2026 &mdash; current</span>
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-num">/ 06</span>
+          <h2 class="section-h"><span class="hash">#</span> let's talk</h2>
         </header>
 
-        <p class="project-desc">
-          A production-grade, automated risk system computing Basel III
-          <em>FRTB</em> Internal-Models-Approach capital &mdash; Value at Risk,
-          Expected Shortfall, stress calibration, and a Standardised-Approach
-          comparison &mdash; on a multi-asset book, served to a
-          <b>live, deployed dashboard</b>.
+        <p class="contact-lede">
+          I'm actively recruiting for <em>winter 2026 &amp; summer 2027</em>
+          internships and full-time roles in <b>quantitative research</b>,
+          <b>equity research</b>, <b>actuarial</b>, and <b>data / risk
+            analytics</b>. If any of that sounds like a fit, I'd love to hear from you.
         </p>
 
-        <ul class="project-points">
-          <li>97.5% Historical-Simulation <b>VaR &amp; Expected Shortfall</b> (with parametric &amp; Monte-Carlo Student-t comparisons), stress-calibrated and liquidity-horizon-adjusted, across a 6-asset book (<b>29,000+</b> daily obs, 2007&ndash;26).</li>
-          <li>Computes an <b>Internal-Models vs Standardised-Approach</b> capital charge under the Basel III <b>output floor</b> &mdash; here the SA floor binds at <b>11.2%</b> of notional.</li>
-          <li>Weekly <b>Acerbi-Szekely</b> ES backtest with Kupiec &amp; Christoffersen tests; surfaced a <b>54%-of-weeks</b> failure rate revealing the procyclicality of rolling-window ES.</li>
-          <li>Engineered end-to-end: <b>pytest + GitHub Actions CI</b>, a Dockerized stack, and a <b>daily cloud run</b> (Actions cron) whose event detector flags regime shifts, ES spikes &amp; backtest breaches, then auto-publishes <b>Claude-written risk-desk recaps</b> with rendered risk cards.</li>
-          <li>Architected by directing <b>Claude Code (agentic AI)</b>, with every risk function validated against hand-checked results as the human-in-the-loop.</li>
-        </ul>
-
-        <div class="project-viz horizontal">
-          <div class="metric-card">
-            <span class="metric-k">ES 97.5%</span>
-            <span class="metric-v">1.56%</span>
-            <span class="metric-sub">liq-adj 3.36%</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-k">capital</span>
-            <span class="metric-v">11.2%</span>
-            <span class="metric-sub">SA floor binds</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-k">backtest</span>
-            <span class="metric-v">54%</span>
-            <span class="metric-sub">weeks fail</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-k">history</span>
-            <span class="metric-v">29k+</span>
-            <span class="metric-sub">obs &middot; 2007&ndash;26</span>
-          </div>
-        </div>
-
-        <figure class="project-shot" style="margin:1.25rem 0 0;">
-          <img src="assets/frtb-dashboard.png" loading="lazy"
-               alt="FRTB risk dashboard: ES vs VaR, volatility regime, per-asset risk contribution, and weekly backtest"
-               style="width:100%; border-radius:12px; border:1px solid rgba(255,255,255,.08); display:block;" />
-          <figcaption style="margin:.6rem 0 0; font-size:.78rem; color:#9aa0aa;">Reading the four panels:</figcaption>
-          <ul style="list-style:none; padding:0; margin:.4rem 0 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:.35rem .9rem; font-size:.78rem; color:#9aa0aa; line-height:1.45;">
-            <li><b style="color:#58a6ff;">ES vs VaR</b> &mdash; average tail-day loss vs the loss threshold, over 252 days.</li>
-            <li><b style="color:#58a6ff;">Volatility regime</b> &mdash; shaded background: green calm, amber elevated, red stressed.</li>
-            <li><b style="color:#58a6ff;">Asset contribution</b> &mdash; which holding drives today's potential bad-day loss.</li>
-            <li><b style="color:#58a6ff;">Backtest (Z2)</b> &mdash; weekly model check; green passes, red underestimates risk.</li>
-          </ul>
-        </figure>
-
-        <div class="project-links">
-          <a href="https://frtb-ima-risk-monitor.onrender.com/" target="_blank" rel="noopener">live dashboard <span>&rarr;</span></a>
-          <a href="https://github.com/marksguo/frtb-ima-risk-monitor" target="_blank" rel="noopener">github <span>&rarr;</span></a>
-        </div>
-      </article>
-
-      <!-- 02 Labor Dashboard -->
-      <article class="project" style="--accent: #8b80ff; --accent-soft: rgba(139,128,255,.14);">
-        <div class="project-glow"></div>
-        <header class="project-head">
-          <div class="project-headl">
-            <span class="project-num">02 / labor</span>
-            <h3>Beyond U-3: Labor Market Dashboard</h3>
-            <p class="project-tags">
-              <span class="tag">Python</span>
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">SQL</span>
-              <span class="tag">Tableau</span>
-              <span class="tag">FRED API</span>
-              <span class="tag">SQLAlchemy</span>
-            </p>
-          </div>
-          <span class="project-when">May 2026 &mdash; current</span>
-        </header>
-
-        <p class="project-desc">
-          An automated macro dashboard that quantifies how the official U-3
-          unemployment rate <em>systematically understates</em> labor market
-          stress &mdash; and tracks the leading indicators that actually signal
-          turning points.
-        </p>
-
-        <div class="project-body">
-          <ul class="project-points">
-            <li>Designed a normalized PostgreSQL database storing <b>14 FRED time series</b> across 30+ years of U.S. labor data.</li>
-            <li>Quantified U-3 understates labor stress by <b>4.42 pts</b> in normal periods, <b>5.37 pts</b> in the Great Recession.</li>
-            <li>Built a Python pipeline (FRED + pandas + SQLAlchemy) resampling mixed-frequency series and computing derived metrics live.</li>
-            <li>Scheduled monthly via Windows Task Scheduler &mdash; production database, zero manual refresh.</li>
-            <li>Tracks 8 leading indicators including temp help (<b>−21.4%</b> from peak), quits rate, 10Y&ndash;2Y spread, saving rate.</li>
-          </ul>
-
-          <!-- mini live-snapshot chart -->
-          <div class="project-viz">
-            <div class="viz-head">
-              <span class="viz-title">snapshot &middot; apr 2026</span>
-              <span class="viz-dot">●&nbsp;live</span>
-            </div>
-
-            <!-- inline SVG sparkline: U-3 vs U-6 -->
-            <div class="spark-wrap">
-              <div class="spark-row">
-                <span class="spark-lab">U-3</span>
-                <svg class="spark" viewBox="0 0 200 40" preserveAspectRatio="none">
-                  <path class="spark-path c-blue" d="M0.0,36.0 L5.7,30.2 L11.4,30.2 L17.1,33.1 L22.9,27.3 L28.6,27.3 L34.3,21.5 L40.0,27.3 L45.7,24.4 L51.4,27.3 L57.1,21.5 L62.9,21.5 L68.6,21.5 L74.3,21.5 L80.0,15.6 L85.7,12.7 L91.4,12.7 L97.1,15.6 L102.9,15.6 L108.6,12.7 L114.3,15.6 L120.0,18.5 L125.7,12.7 L131.4,12.7 L137.1,12.7 L142.9,9.8 L148.6,15.6 L154.3,9.8 L160.0,9.8 L165.7,6.9 L171.4,4.0 L177.1,6.9 L182.9,9.8 L188.6,6.9 L194.3,9.8 L200.0,9.8"/>
-                </svg>
-                <span class="spark-val">4.3%</span>
-              </div>
-              <div class="spark-row">
-                <span class="spark-lab">U-6</span>
-                <svg class="spark" viewBox="0 0 200 40" preserveAspectRatio="none">
-                  <path class="spark-path c-coral" d="M0.0,36.0 L5.7,34.5 L11.4,31.4 L17.1,34.5 L22.9,28.4 L28.6,29.9 L34.3,26.9 L40.0,29.9 L45.7,26.9 L51.4,26.9 L57.1,25.3 L62.9,25.3 L68.6,23.8 L74.3,23.8 L80.0,23.8 L85.7,17.7 L91.4,17.7 L97.1,19.2 L102.9,19.2 L108.6,19.2 L114.3,20.8 L120.0,22.3 L125.7,14.7 L131.4,16.2 L137.1,17.7 L142.9,17.7 L148.6,19.2 L154.3,16.2 L160.0,13.1 L165.7,13.1 L171.4,4.0 L177.1,8.6 L182.9,13.1 L188.6,16.2 L194.3,14.7 L200.0,11.6"/>
-                </svg>
-                <span class="spark-val">8.2%</span>
-              </div>
-              <div class="spark-row">
-                <span class="spark-lab">temp.helps</span>
-                <svg class="spark" viewBox="0 0 200 40" preserveAspectRatio="none">
-                  <path class="spark-path c-amber" d="M0.0,4.0 L5.7,6.3 L11.4,8.7 L17.1,10.3 L22.9,11.9 L28.6,13.0 L34.3,15.7 L40.0,19.1 L45.7,18.6 L51.4,19.8 L57.1,20.2 L62.9,21.4 L68.6,22.3 L74.3,24.3 L80.0,25.4 L85.7,26.5 L91.4,27.9 L97.1,29.0 L102.9,28.8 L108.6,29.5 L114.3,29.7 L120.0,30.1 L125.7,30.4 L131.4,30.6 L137.1,31.5 L142.9,32.2 L148.6,32.8 L154.3,33.5 L160.0,34.4 L165.7,35.8 L171.4,34.9 L177.1,36.0 L182.9,34.6 L188.6,34.4 L194.3,34.0 L200.0,33.5"/>
-                </svg>
-                <span class="spark-val warn">&minus;21.4%</span>
-              </div>
-              <div class="spark-row">
-                <span class="spark-lab">yield 10y&minus;2y</span>
-                <svg class="spark" viewBox="0 0 200 40" preserveAspectRatio="none">
-                  <path class="spark-path c-mint" d="M0.0,28.6 L5.7,35.2 L11.4,36.0 L17.1,32.1 L22.9,30.3 L28.6,22.9 L34.3,25.1 L40.0,26.2 L45.7,22.8 L51.4,24.2 L57.1,25.1 L62.9,24.1 L68.6,24.9 L74.3,26.1 L80.0,22.4 L85.7,19.4 L91.4,15.5 L97.1,15.0 L102.9,15.5 L108.6,14.2 L114.3,10.4 L120.0,12.7 L125.7,11.3 L131.4,7.5 L137.1,7.4 L142.9,7.6 L148.6,7.3 L154.3,6.3 L160.0,6.5 L165.7,6.7 L171.4,6.7 L177.1,4.7 L182.9,4.0 L188.6,4.5 L194.3,6.9 L200.0,7.1"/>
-                </svg>
-                <span class="spark-val">+0.52%</span>
-              </div>
-              <div class="spark-row">
-                <span class="spark-lab">saving rate</span>
-                <svg class="spark" viewBox="0 0 200 40" preserveAspectRatio="none">
-                  <path class="spark-path c-rose" d="M0.0,7.4 L5.7,10.9 L11.4,14.3 L17.1,13.1 L22.9,16.6 L28.6,15.4 L34.3,13.1 L40.0,13.1 L45.7,4.0 L51.4,7.4 L57.1,9.7 L62.9,10.9 L68.6,10.9 L74.3,12.0 L80.0,16.6 L85.7,17.7 L91.4,22.3 L97.1,20.0 L102.9,21.1 L108.6,28.0 L114.3,18.9 L120.0,17.7 L125.7,18.9 L131.4,14.3 L137.1,21.1 L142.9,24.6 L148.6,25.7 L154.3,26.9 L160.0,28.0 L165.7,31.4 L171.4,31.4 L177.1,32.6 L182.9,25.7 L188.6,32.6 L194.3,36.0"/>
-                </svg>
-                <span class="spark-val warn">3.6%</span>
-              </div>
-              <div class="spark-row">
-                <span class="spark-lab">prime LFPR</span>
-                <svg class="spark" viewBox="0 0 200 40" preserveAspectRatio="none">
-                  <path class="spark-path c-blue" d="M0.0,28.0 L5.7,24.0 L11.4,28.0 L17.1,28.0 L22.9,24.0 L28.6,28.0 L34.3,28.0 L40.0,36.0 L45.7,32.0 L51.4,24.0 L57.1,28.0 L62.9,24.0 L68.6,20.0 L74.3,16.0 L80.0,4.0 L85.7,8.0 L91.4,12.0 L97.1,24.0 L102.9,24.0 L108.6,28.0 L114.3,24.0 L120.0,24.0 L125.7,32.0 L131.4,20.0 L137.1,28.0 L142.9,24.0 L148.6,28.0 L154.3,16.0 L160.0,16.0 L171.4,12.0 L177.1,12.0 L182.9,4.0 L188.6,8.0 L194.3,12.0 L200.0,12.0"/>
-                </svg>
-                <span class="spark-val ok">83.8%</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-links">
-          <a href="labor-dashboard.html">case study <span>&rarr;</span></a>
-          <a href="https://github.com/marksguo/labor-market-dashboard" target="_blank" rel="noopener">github <span>&rarr;</span></a>
-          <a href="https://public.tableau.com/app/profile/guomarks" target="_blank" rel="noopener">tableau dashboard <span>&rarr;</span></a>
-        </div>
-      </article>
-
-      <!-- 03 SPY Volatility -->
-      <article class="project" style="--accent: #ff7e6b; --accent-soft: rgba(255,126,107,.14);">
-        <div class="project-glow"></div>
-        <header class="project-head">
-          <div class="project-headl">
-            <span class="project-num">03 / risk</span>
-            <h3>S&amp;P 500 Volatility Prediction</h3>
-            <p class="project-tags">
-              <span class="tag">Python</span>
-              <span class="tag">R</span>
-              <span class="tag">OLS</span>
-              <span class="tag">WLS</span>
-              <span class="tag">Robust M-Est.</span>
-            </p>
-          </div>
-          <span class="project-when">Jan &mdash; May 2026</span>
-        </header>
-
-        <p class="project-desc">
-          Built and compared three regression families on <b>4,800+ daily S&amp;P 500 returns
-          (2007&ndash;2026)</b> to predict realized volatility and quantify risk persistence
-          &mdash; the empirical backbone of any dynamic VaR framework.
-        </p>
-
-        <ul class="project-points">
-          <li>Confirmed statistically significant <b>volatility clustering</b> (<code>p &lt; 0.0001</code>); directly supports dynamic VaR and portfolio risk frameworks used in industry.</li>
-          <li>Validated via 70/30 train-test split with full diagnostic suite &mdash; heteroscedasticity testing, ACF analysis, Cook's distance influence detection.</li>
-          <li>Compared OLS, WLS, and Robust M-estimation to surface which assumptions hold once you stop pretending returns are i.i.d. normal.</li>
-        </ul>
-
-        <div class="project-viz horizontal">
-          <div class="metric-card">
-            <span class="metric-k">n</span>
-            <span class="metric-v">4,800+</span>
-            <span class="metric-sub">daily returns</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-k">window</span>
-            <span class="metric-v">2007&ndash;26</span>
-            <span class="metric-sub">19 yrs &middot; 2 regimes</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-k">clustering</span>
-            <span class="metric-v">p&lt;.0001</span>
-            <span class="metric-sub">significant</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-k">split</span>
-            <span class="metric-v">70 / 30</span>
-            <span class="metric-sub">train / test</span>
-          </div>
-        </div>
-
-        <div class="project-links">
-          <a href="https://github.com/marksguo/SPY-Volatility-Modeling" target="_blank" rel="noopener">
-            github.com/marksguo/SPY-Volatility-Modeling <span>&rarr;</span>
+        <div class="contact-grid">
+          <a class="contact-card" href="mailto:marksguo2005@gmail.com" style="--accent: #8b80ff;">
+            <span class="cc-k">/ email</span>
+            <span class="cc-v">marksguo2005@gmail.com</span>
+            <span class="cc-arrow">&rarr;</span>
           </a>
-        </div>
-      </article>
-
-      <!-- 04 Bayesian -->
-      <article class="project" style="--accent: #c89eff; --accent-soft: rgba(200,158,255,.14);">
-        <div class="project-glow"></div>
-        <header class="project-head">
-          <div class="project-headl">
-            <span class="project-num">04 / inference</span>
-            <h3>Bayesian Hierarchical Modeling</h3>
-            <p class="project-tags">
-              <span class="tag">R</span>
-              <span class="tag">Metropolis-Hastings</span>
-              <span class="tag">MCMC</span>
-              <span class="tag">Diagnostics</span>
-            </p>
+          <a class="contact-card" href="tel:+19804309961" style="--accent: #ff7e6b;">
+            <span class="cc-k">/ phone</span>
+            <span class="cc-v">(980) 430-9961</span>
+            <span class="cc-arrow">&rarr;</span>
+          </a>
+          <a class="contact-card" href="https://github.com/marksguo" target="_blank" rel="noopener"
+            style="--accent: #e8b563;">
+            <span class="cc-k">/ github</span>
+            <span class="cc-v">github.com/marksguo</span>
+            <span class="cc-arrow">&rarr;</span>
+          </a>
+          <a class="contact-card" href="https://public.tableau.com/app/profile/guomarks" target="_blank" rel="noopener"
+            style="--accent: #6ec5a8;">
+            <span class="cc-k">/ tableau</span>
+            <span class="cc-v">public.tableau.com/guomarks</span>
+            <span class="cc-arrow">&rarr;</span>
+          </a>
+          <a class="contact-card" href="assets/Marks_Guo_Resume.pdf" target="_blank" rel="noopener"
+            style="--accent: #c89eff;">
+            <span class="cc-k">/ resume</span>
+            <span class="cc-v">Marks_Guo_Resume.pdf &darr;</span>
+            <span class="cc-arrow">&rarr;</span>
+          </a>
+          <div class="contact-card static" style="--accent: #a0a0b0;">
+            <span class="cc-k">/ based</span>
+            <span class="cc-v">Charlotte, NC</span>
           </div>
-          <span class="project-when">Sep 2025 &mdash; Mar 2026</span>
-        </header>
-
-        <p class="project-desc">
-          Implemented a hierarchical Bayesian model from scratch with a custom
-          Metropolis-Hastings sampler &mdash; not a library call &mdash; to estimate
-          group-level probabilities and quantify uncertainty rigorously.
-        </p>
-
-        <ul class="project-points">
-          <li>Ran <b>4 Markov chains × 100,000 iterations</b> each; tuned proposal step sizes for healthy acceptance rates.</li>
-          <li>Confirmed convergence via Gelman-Rubin diagnostics (<code>PSRF = 1.0</code>); effective sample sizes exceeding <b>26,000</b> across all chains.</li>
-          <li>Delivered findings with 95% credible intervals and actionable business recommendations translated for non-technical stakeholders.</li>
-        </ul>
-
-        <div class="project-viz horizontal">
-          <div class="metric-card">
-            <span class="metric-k">chains</span>
-            <span class="metric-v">4</span>
-            <span class="metric-sub">parallel</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-k">iter / chain</span>
-            <span class="metric-v">100k</span>
-            <span class="metric-sub">incl. burn-in</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-k">PSRF</span>
-            <span class="metric-v">1.0</span>
-            <span class="metric-sub">converged</span>
-          </div>
-          <div class="metric-card">
-            <span class="metric-k">ESS</span>
-            <span class="metric-v">26k+</span>
-            <span class="metric-sub">all chains</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- 05 Amazon DCF -->
-      <article class="project" style="--accent: #e8b563; --accent-soft: rgba(232,181,99,.14);">
-        <div class="project-glow"></div>
-        <header class="project-head">
-          <div class="project-headl">
-            <span class="project-num">05 / valuation</span>
-            <h3>Amazon, Inc. &mdash; DCF &amp; Equity Valuation</h3>
-            <p class="project-tags">
-              <span class="tag">Excel</span>
-              <span class="tag">DCF</span>
-              <span class="tag">CAPM / WACC</span>
-              <span class="tag">Sensitivity</span>
-            </p>
-          </div>
-          <span class="project-when">Jan &mdash; Apr 2025</span>
-        </header>
-
-        <p class="project-desc">
-          Built a <b>5-year pro forma model</b> and DCF valuation using
-          CAPM-derived WACC across multiple macroeconomic scenarios; stress-tested
-          beta, WACC, and terminal growth via sensitivity tables. Closed with a
-          structured equity research report and a supported &ldquo;Hold&rdquo;
-          recommendation.
-        </p>
-        <ul class="project-points">
-          <li>Trend, common-size, and ratio analysis across profitability, liquidity, leverage, and default risk.</li>
-          <li>Scenario-conditional WACC and terminal growth bands to make the recommendation robust to the macro assumption.</li>
-        </ul>
-      </article>
-
-      <!-- 06 Endowment -->
-      <article class="project" style="--accent: #6ec5a8; --accent-soft: rgba(110,197,168,.14);">
-        <div class="project-glow"></div>
-        <header class="project-head">
-          <div class="project-headl">
-            <span class="project-num">06 / research</span>
-            <h3>University Endowment &amp; Resource Allocation</h3>
-            <p class="project-tags">
-              <span class="tag">Excel</span>
-              <span class="tag">NACUBO</span>
-              <span class="tag">IPEDS</span>
-              <span class="tag">Faculty Research</span>
-            </p>
-          </div>
-          <span class="project-when">Feb &mdash; Apr 2024</span>
-        </header>
-        <p class="project-desc">
-          Collaborative research with <b>Prof. Michael Rizzo</b> across
-          <b>11 universities</b>. Identified a significant correlation between
-          endowment-per-student and U.S. News rankings &mdash; presented to
-          Economics faculty with data-driven conclusions on institutional
-          resource-allocation tradeoffs.
-        </p>
-      </article>
-
-    </div>
-  </section>
-
-
-  <!-- SKILLS -->
-  <section id="skills" class="section">
-    <div class="container">
-      <header class="section-head">
-        <span class="section-num">/ 04</span>
-        <h2 class="section-h"><span class="hash">#</span> stack &amp; methods</h2>
-      </header>
-
-      <div class="skills-grid">
-        <div class="skill-block" style="--accent: #8b80ff;">
-          <h4>Languages &amp; tools</h4>
-          <ul class="chips">
-            <li>Python</li><li>R</li><li>SQL</li><li>PostgreSQL</li>
-            <li>Excel <em>(advanced)</em></li><li>Tableau</li><li>Power BI</li>
-            <li>pandas</li><li>SQLAlchemy</li><li>FRED API</li>
-          </ul>
-        </div>
-
-        <div class="skill-block" style="--accent: #ff7e6b;">
-          <h4>Quant &amp; statistics</h4>
-          <ul class="chips">
-            <li>Regression Modeling</li><li>Bayesian / MCMC</li>
-            <li>Monte Carlo</li><li>Time Series</li>
-            <li>Heteroscedasticity Diagnostics</li><li>Hypothesis Testing</li>
-          </ul>
-        </div>
-
-        <div class="skill-block" style="--accent: #e8b563;">
-          <h4>Finance</h4>
-          <ul class="chips">
-            <li>Financial Modeling</li><li>DCF / WACC / CAPM</li>
-            <li>Sensitivity Analysis</li><li>Equity Research</li>
-            <li>Financial Statement Analysis</li><li>Risk Management</li>
-          </ul>
-        </div>
-
-        <div class="skill-block" style="--accent: #6ec5a8;">
-          <h4>Languages spoken</h4>
-          <ul class="chips">
-            <li>English</li><li>Mandarin</li><li>Cantonese</li><li>Fuzhounese</li>
-          </ul>
         </div>
       </div>
+    </section>
 
-      <div class="coursework">
-        <h4>Relevant coursework</h4>
-        <p>
-          Statistical Methodology &middot; Financial Statement Analysis &middot;
-          Investments &middot; Statistical Computing in R &middot;
-          Financial Management &middot; Accounting &middot; Corporate Finance
-        </p>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <span class="footer-mark">MG</span>
+        <span>&copy; <span id="year"></span> Marks Guo</span>
       </div>
+      <span class="footer-sub">handcrafted &middot; no frameworks &middot; built may 2026</span>
     </div>
-  </section>
+  </footer>
 
-
-  <!-- EXPERIENCE -->
-  <section id="experience" class="section alt">
-    <div class="container">
-      <header class="section-head">
-        <span class="section-num">/ 05</span>
-        <h2 class="section-h"><span class="hash">#</span> experience</h2>
-      </header>
-
-      <div class="timeline">
-        <article class="job">
-          <span class="timeline-dot" style="--accent: #8b80ff;"></span>
-          <header class="job-head">
-            <div>
-              <h3>China Fun of NC, Inc.</h3>
-              <p class="job-role">Junior Financial &amp; Operations Analyst</p>
-            </div>
-            <div class="job-meta">
-              <span>Sep 2017 &mdash; Jul 2025</span>
-              <span>Charlotte, NC</span>
-            </div>
-          </header>
-          <ul class="project-points">
-            <li>Drove <b>25% revenue growth</b> (~$375K incremental annually) at a $1.5M+ revenue operation via margin expansion and data-driven process improvements across procurement, fulfillment, and labor.</li>
-            <li>Monitored food cost ratios against a ~32% COGS target; identified <b>$10K+ in annual ingredient savings</b> through vendor renegotiation and waste reduction across $30K+ in monthly procurement.</li>
-            <li>Built a <b>2,000-cell Excel order &amp; financial tracking system</b> integrated with DoorDash &mdash; reconciling $125K+ in monthly revenue across 150+ daily orders.</li>
-            <li>Prepared monthly P&amp;L summaries (revenue, ~28% labor, food cost) and presented to ownership to support operational and budgetary decisions.</li>
-            <li>Reconciled daily POS receipts to bank deposits with <b>&lt;0.5% discrepancy</b>; managed AP and supported quarterly tax documentation for CPA-led filings.</li>
-            <li>Processed bi-weekly payroll for 15+ employees with IRS-compliant tip reporting; trained 10+ staff on POS systems for a <b>30% efficiency gain</b>.</li>
-          </ul>
-        </article>
-
-        <article class="job">
-          <span class="timeline-dot" style="--accent: #6ec5a8;"></span>
-          <header class="job-head">
-            <div>
-              <h3>Tien Ren Cultural &amp; Educational Foundation</h3>
-              <p class="job-role">Lecturer &amp; Event Organizer (2021&ndash;present) &middot; Assistant Lecturer (2019&ndash;2021)</p>
-            </div>
-            <div class="job-meta">
-              <span>Summer 2015 &mdash; current</span>
-              <span>Indian Trail, NC</span>
-            </div>
-          </header>
-          <ul class="project-points">
-            <li>Delivered <b>30+ educational sessions</b> to ~1,000 youth (ages 14&ndash;20).</li>
-            <li>Organized 3 annual volunteer events at <b>Second Harvest Food Bank of Metrolina</b>.</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- CONTACT -->
-  <section id="contact" class="section contact">
-    <div class="container">
-      <header class="section-head">
-        <span class="section-num">/ 06</span>
-        <h2 class="section-h"><span class="hash">#</span> let's talk</h2>
-      </header>
-
-      <p class="contact-lede">
-        I'm actively recruiting for <em>winter 2026 &amp; summer 2027</em>
-        internships and full-time roles in <b>quantitative research</b>,
-        <b>equity research</b>, <b>actuarial</b>, and <b>data / risk
-        analytics</b>. If any of that sounds like a fit, I'd love to hear from you.
-      </p>
-
-      <div class="contact-grid">
-        <a class="contact-card" href="mailto:marksguo2005@gmail.com" style="--accent: #8b80ff;">
-          <span class="cc-k">/ email</span>
-          <span class="cc-v">marksguo2005@gmail.com</span>
-          <span class="cc-arrow">&rarr;</span>
-        </a>
-        <a class="contact-card" href="tel:+19804309961" style="--accent: #ff7e6b;">
-          <span class="cc-k">/ phone</span>
-          <span class="cc-v">(980) 430-9961</span>
-          <span class="cc-arrow">&rarr;</span>
-        </a>
-        <a class="contact-card" href="https://github.com/marksguo" target="_blank" rel="noopener" style="--accent: #e8b563;">
-          <span class="cc-k">/ github</span>
-          <span class="cc-v">github.com/marksguo</span>
-          <span class="cc-arrow">&rarr;</span>
-        </a>
-        <a class="contact-card" href="https://public.tableau.com/app/profile/guomarks" target="_blank" rel="noopener" style="--accent: #6ec5a8;">
-          <span class="cc-k">/ tableau</span>
-          <span class="cc-v">public.tableau.com/guomarks</span>
-          <span class="cc-arrow">&rarr;</span>
-        </a>
-        <a class="contact-card" href="assets/Marks_Guo_Resume.pdf" target="_blank" rel="noopener" style="--accent: #c89eff;">
-          <span class="cc-k">/ resume</span>
-          <span class="cc-v">Marks_Guo_Resume.pdf &darr;</span>
-          <span class="cc-arrow">&rarr;</span>
-        </a>
-        <div class="contact-card static" style="--accent: #a0a0b0;">
-          <span class="cc-k">/ based</span>
-          <span class="cc-v">Charlotte, NC</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer class="footer">
-  <div class="container footer-inner">
-    <div>
-      <span class="footer-mark">MG</span>
-      <span>&copy; <span id="year"></span> Marks Guo</span>
-    </div>
-    <span class="footer-sub">handcrafted &middot; no frameworks &middot; built may 2026</span>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>
