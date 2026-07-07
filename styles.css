@@ -937,6 +937,24 @@ main, .nav, .footer { position: relative; z-index: 2; }
 .spark-val.warn { color: var(--c-coral); }
 .spark-val.ok   { color: var(--c-mint); }
 
+/* project chart figures */
+.project-shot { margin: 4px 0 0; }
+.project-shot img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.08);
+  display: block;
+  background: var(--bg-alt);
+}
+.project-shot figcaption {
+  margin: .6rem 0 0;
+  font-size: .78rem;
+  color: var(--text-soft);
+  font-family: var(--mono);
+  letter-spacing: .02em;
+}
+.project-shot figcaption b { color: var(--text-dim); font-weight: 600; }
+
 .project-links {
   display: flex; flex-wrap: wrap; gap: 22px;
   margin-top: 8px;
@@ -953,6 +971,88 @@ main, .nav, .footer { position: relative; z-index: 2; }
 .project-links a span { transition: transform .25s ease; }
 .project-links a:hover { border-bottom-color: var(--accent); }
 .project-links a:hover span { transform: translateX(4px); }
+
+/* =================================================================
+   IN PROGRESS — live systems
+   ================================================================= */
+.live-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--c-mint);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  padding: 4px 10px;
+  border: 1px solid rgba(110,197,168,.35);
+  border-radius: 999px;
+  background: rgba(110,197,168,.08);
+}
+.link-static {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--text-soft);
+  letter-spacing: .03em;
+}
+
+.live-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 24px;
+}
+.live-card {
+  --accent: var(--c-indigo);
+  position: relative;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 26px 26px 24px;
+  overflow: hidden;
+  transition: border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.live-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: var(--accent);
+  opacity: .8;
+  transition: width .3s ease;
+}
+.live-card:hover { border-color: var(--border-2); transform: translateY(-3px); }
+.live-card:hover::before { width: 5px; }
+.live-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; margin-bottom: 14px;
+}
+.live-k {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: .1em;
+}
+.live-card h3 {
+  font-family: var(--display);
+  font-size: 25px;
+  font-weight: 400;
+  margin: 0 0 10px;
+  color: var(--text);
+  letter-spacing: -.01em;
+}
+.live-card p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+.live-card p b { color: var(--text); font-weight: 600; }
+.live-stack {
+  margin-top: 14px !important;
+  font-family: var(--mono);
+  font-size: 11.5px !important;
+  color: var(--text-soft) !important;
+  letter-spacing: .04em;
+}
 
 /* =================================================================
    SKILLS
@@ -1208,6 +1308,179 @@ main, .nav, .footer { position: relative; z-index: 2; }
 }
 
 /* =================================================================
+   SCROLL PROGRESS BAR
+   ================================================================= */
+.scroll-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px; width: 100%;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  z-index: 100;
+  background: linear-gradient(90deg,
+    var(--c-indigo), var(--c-coral), var(--c-amber), var(--c-mint), var(--c-violet));
+  box-shadow: 0 0 12px rgba(139,128,255,.55);
+  will-change: transform;
+}
+
+/* =================================================================
+   INTERACTIVE PARTICLE BACKGROUND
+   ================================================================= */
+.bg-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: .55;
+  transition: opacity .5s ease;
+}
+
+/* =================================================================
+   TICKER RIBBON
+   ================================================================= */
+.ticker {
+  position: relative;
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(90deg, rgba(20,17,30,.7), rgba(10,8,20,.35), rgba(20,17,30,.7));
+  backdrop-filter: blur(6px);
+  padding: 13px 0;
+  z-index: 2;
+}
+.ticker::before, .ticker::after {
+  content: '';
+  position: absolute; top: 0; bottom: 0;
+  width: 140px; z-index: 2; pointer-events: none;
+}
+.ticker::before { left: 0;  background: linear-gradient(90deg, var(--bg), transparent); }
+.ticker::after  { right: 0; background: linear-gradient(270deg, var(--bg), transparent); }
+.ticker-track {
+  display: inline-flex;
+  white-space: nowrap;
+  will-change: transform;
+  animation: ticker-scroll 46s linear infinite;
+}
+.ticker:hover .ticker-track { animation-play-state: paused; }
+.ticker-item {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 0 20px;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--text-soft);
+  letter-spacing: .06em;
+  border-right: 1px solid var(--border);
+}
+.ticker-item .tk-sym { font-weight: 600; }
+.ticker-item.held { color: var(--c-mint); }
+.ticker-item.held .tk-sym { color: var(--text); }
+.ticker-item .tk-mark { color: var(--c-mint); font-size: 9px; }
+.ticker-item.lead {
+  color: var(--c-mint);
+  font-weight: 600;
+  letter-spacing: .12em;
+  gap: 10px;
+  padding-left: 4px;
+}
+.ticker-item.lead .tk-note {
+  color: var(--text-soft);
+  font-weight: 400;
+  letter-spacing: .04em;
+  text-transform: none;
+}
+@keyframes ticker-scroll {
+  to { transform: translateX(-50%); }
+}
+
+/* =================================================================
+   ANIMATED GRADIENT BORDER (hover) — readable, no movement
+   ================================================================= */
+@property --beam-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+.beam-host { position: relative; }
+.beam {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;               /* border thickness */
+  pointer-events: none;
+  z-index: 6;
+  opacity: 0;
+  transition: opacity .35s ease;
+  background: conic-gradient(from var(--beam-angle),
+    transparent 0deg,
+    color-mix(in srgb, var(--accent, #8b80ff) 92%, white) 35deg,
+    transparent 80deg,
+    transparent 180deg,
+    color-mix(in srgb, var(--accent, #8b80ff) 70%, transparent) 215deg,
+    transparent 260deg,
+    transparent 360deg);
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+          mask-composite: exclude;
+}
+.beam-host:hover .beam {
+  opacity: 1;
+  animation: beam-rotate 3s linear infinite;
+}
+@keyframes beam-rotate { to { --beam-angle: 360deg; } }
+
+/* =================================================================
+   HERO NAME — animated gradient shimmer
+   ================================================================= */
+.hero-name .hero-glow {
+  background: linear-gradient(115deg,
+    var(--text) 0%, var(--c-indigo) 38%, var(--c-coral) 62%, var(--text) 100%);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: name-shimmer 9s linear infinite;
+}
+@keyframes name-shimmer {
+  to { background-position: 220% center; }
+}
+
+/* =================================================================
+   BACK TO TOP
+   ================================================================= */
+.to-top {
+  position: fixed;
+  right: 24px; bottom: 24px;
+  width: 46px; height: 46px;
+  border-radius: 13px;
+  display: grid; place-items: center;
+  background: rgba(20,17,30,.72);
+  border: 1px solid var(--border-2);
+  backdrop-filter: blur(8px);
+  color: var(--text);
+  cursor: pointer;
+  z-index: 60;
+  opacity: 0;
+  transform: translateY(16px) scale(.9);
+  pointer-events: none;
+  transition: opacity .3s ease,
+              transform .3s cubic-bezier(.34,1.56,.64,1),
+              border-color .2s ease, box-shadow .2s ease;
+}
+.to-top.show { opacity: 1; transform: none; pointer-events: auto; }
+.to-top:hover {
+  border-color: var(--c-indigo);
+  box-shadow: 0 12px 28px -12px rgba(139,128,255,.6);
+  transform: translateY(-3px);
+}
+.to-top svg { width: 18px; height: 18px; }
+
+/* =================================================================
    RESPONSIVE
    ================================================================= */
 @media (max-width: 1000px) {
@@ -1256,5 +1529,7 @@ main, .nav, .footer { position: relative; z-index: 2; }
     animation-iteration-count: 1 !important;
     transition-duration: .01ms !important;
   }
-  .cursor-glow, .aurora { display: none !important; }
+  .cursor-glow, .aurora, .bg-canvas, .beam { display: none !important; }
+  .ticker-track { animation: none !important; }
+  .hero-name .hero-glow { -webkit-text-fill-color: transparent; }
 }

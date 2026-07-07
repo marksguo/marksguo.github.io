@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Beyond U-3: Labor Market Dashboard — Marks Guo</title>
+<title>Beyond U-3: Labor Market Dashboard | Marks Guo</title>
 <meta name="description" content="Case study: how the U-3 unemployment rate systematically understates labor market stress. Automated FRED → PostgreSQL pipeline tracking 14 economic series across 30+ years." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -46,7 +46,7 @@
       <div class="case-meta">
         <span class="case-tag" style="--accent: #8b80ff;">01 / labor analytics</span>
         <span class="dot-sep">&middot;</span>
-        <span>May 2026 &mdash; current</span>
+        <span>May 2026 to now</span>
         <span class="dot-sep">&middot;</span>
         <span><span class="pulse-dot mini"></span> live pipeline</span>
       </div>
@@ -54,8 +54,8 @@
         Beyond <em>U-3</em>.
       </h1>
       <p class="case-sub">
-        How the headline unemployment rate systematically understates
-        labor market stress &mdash; and what to watch instead.
+        How the headline unemployment rate understates real labor market stress,
+        and what to watch instead.
       </p>
 
       <div class="case-stats">
@@ -86,9 +86,9 @@
       </ul>
       <p>
         The BLS U-6 rate, which includes all three, currently sits at
-        <strong>8.2%</strong> &mdash; nearly double U-3. This project builds the data
-        infrastructure to track that gap historically, contextualize it against
-        recessions, and monitor the forward-looking indicators that turn
+        <strong>8.2%</strong>, nearly double U-3. This project builds the data
+        infrastructure to track that gap over time, line it up against recessions,
+        and watch the forward-looking indicators that turn
         <em>before</em> U-3 does.
       </p>
     </div>
@@ -100,11 +100,11 @@
     <div class="container">
       <header class="chart-head">
         <span class="case-h-num">&sect; 02</span>
-        <h2 class="case-h">U-3 vs U-6, 1994&ndash;2026</h2>
+        <h2 class="case-h">U-3 vs U-6, 1994-2026</h2>
         <p class="case-sub-small">
           Monthly seasonally-adjusted rates from FRED. Shaded bands mark NBER recessions.
           The persistent gap between the two lines is the &ldquo;hidden&rdquo; labor stress
-          U-3 fails to capture.
+          U-3 misses.
         </p>
       </header>
 
@@ -188,7 +188,7 @@
 
       <p class="chart-caption">
         Notice the COVID spike: U-3 hit 14.7%, U-6 hit 22.8%. The gap widens
-        most in stress periods &mdash; exactly when policymakers most need accurate signals.
+        most in stress periods, which is exactly when policymakers most need an accurate signal.
         Data: FRED series UNRATE, U6RATE.
       </p>
     </div>
@@ -201,26 +201,26 @@
       <span class="case-h-num">&sect; 03</span>
       <h2 class="case-h">Key findings</h2>
 
-      <h3 class="case-sh">The hidden labor gap is not stable &mdash; it widens in stress</h3>
+      <h3 class="case-sh">The hidden labor gap widens under stress</h3>
       <div class="findings-table">
         <table>
           <thead>
             <tr><th>Period</th><th>Avg U-3/U-6 gap</th><th>Months</th></tr>
           </thead>
           <tbody>
-            <tr><td>Great Recession (Dec '07 &mdash; Jun '09)</td><td>5.37 pts</td><td>19</td></tr>
-            <tr><td>COVID Shock (Feb &mdash; Apr 2020)</td><td>5.33 pts</td><td>3</td></tr>
+            <tr><td>Great Recession (Dec '07 to Jun '09)</td><td>5.37 pts</td><td>19</td></tr>
+            <tr><td>COVID Shock (Feb to Apr 2020)</td><td>5.33 pts</td><td>3</td></tr>
             <tr><td>Normal Periods</td><td>4.42 pts</td><td>~340</td></tr>
-            <tr><td>Dot-com Recession (Mar &mdash; Nov '01)</td><td>4.18 pts</td><td>9</td></tr>
+            <tr><td>Dot-com Recession (Mar to Nov '01)</td><td>4.18 pts</td><td>9</td></tr>
           </tbody>
         </table>
       </div>
       <p class="case-aside">
-        Computed via SQL with a CASE-based recession classifier &mdash; see
+        Computed in SQL with a CASE-based recession classifier. See
         <a href="https://github.com/marksguo/labor-market-dashboard/blob/main/sql/analysis_queries.sql" target="_blank" rel="noopener">analysis_queries.sql &rarr;</a>
       </p>
 
-      <h3 class="case-sh">Eight leading indicators &mdash; current state</h3>
+      <h3 class="case-sh">Eight leading indicators, current state</h3>
       <div class="indicators">
         <div class="ind-card" style="--accent: #f85149;">
           <span class="ind-label">Temp Help Employment</span>
@@ -253,7 +253,7 @@
           <span class="ind-status">benign</span>
         </div>
         <div class="ind-card" style="--accent: #6ec5a8;">
-          <span class="ind-label">Prime-Age LFPR (25&ndash;54)</span>
+          <span class="ind-label">Prime-Age LFPR (25-54)</span>
           <span class="ind-value">83.8%</span>
           <span class="ind-note">Near multi-decade highs. Demographic core is engaged.</span>
           <span class="ind-status">healthy</span>
@@ -261,9 +261,9 @@
       </div>
 
       <blockquote class="case-quote">
-        Not every indicator is flashing red. The thesis is not that recession is
-        certain &mdash; it is that U-3 alone gives an incomplete picture, and the
-        indicators underneath show more stress than the headline suggests.
+        Not every indicator is flashing red, and I'm not calling a recession. The point
+        is just that U-3 on its own gives an incomplete picture, and the indicators
+        underneath it show more stress than the headline suggests.
       </blockquote>
     </div>
   </section>
@@ -369,10 +369,10 @@ ORDER BY avg_gap_pts DESC;</pre>
         <div><code>JTSQUR</code> &middot; JOLTS Quits Rate</div>
         <div><code>PSAVERT</code> &middot; Personal Saving Rate</div>
         <div><code>ICSA</code> &middot; Initial Jobless Claims (wkly)</div>
-        <div><code>T10Y2Y</code> &middot; 10Y&ndash;2Y Treasury Spread (daily)</div>
+        <div><code>T10Y2Y</code> &middot; 10Y-2Y Treasury Spread (daily)</div>
         <div><code>TOTALSL</code> &middot; Total Consumer Credit Outstanding</div>
         <div><code>DRCCLACBS</code> &middot; Credit Card Delinquency Rate</div>
-        <div><code>LNS11300060</code> &middot; Prime-Age (25&ndash;54) LFPR</div>
+        <div><code>LNS11300060</code> &middot; Prime-Age (25-54) LFPR</div>
       </div>
     </div>
   </section>

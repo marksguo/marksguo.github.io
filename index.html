@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Marks Guo | Statistics &amp; Finance</title>
   <meta name="description"
-    content="Marks Guo — junior at the University of Rochester studying Statistics & Finance. Quantitative research, risk modeling, and labor market analytics." />
+    content="Marks Guo, a junior at the University of Rochester studying Statistics and Finance. Quantitative research, risk modeling, and labor market analytics." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,6 +18,9 @@
 
 <body>
 
+  <!-- scroll progress -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
   <!-- ambient layers -->
   <div class="cursor-glow" aria-hidden="true"></div>
   <div class="aurora" aria-hidden="true">
@@ -25,6 +28,7 @@
     <div class="aurora-blob b"></div>
     <div class="aurora-blob c"></div>
   </div>
+  <canvas class="bg-canvas" aria-hidden="true"></canvas>
   <div class="grain" aria-hidden="true"></div>
 
   <!-- nav -->
@@ -38,6 +42,7 @@
         <a href="#about" data-section="about">about</a>
         <a href="#more" data-section="more">more</a>
         <a href="#projects" data-section="projects">work</a>
+        <a href="#progress" data-section="progress">live</a>
         <a href="#skills" data-section="skills">skills</a>
         <a href="#experience" data-section="experience">experience</a>
         <a href="#contact" data-section="contact">contact</a>
@@ -64,7 +69,7 @@
         </div>
 
         <h1 class="hero-name">
-          <span class="word reveal-up">Marks Guo<span class="period">.</span></span>
+          <span class="word reveal-up"><span class="hero-glow">Marks Guo</span><span class="period">.</span></span>
         </h1>
 
         <div class="hero-rotator reveal-up" style="--d: .12s">
@@ -125,6 +130,12 @@
     </section>
 
 
+    <!-- TICKER RIBBON: Market Radar tracked universe -->
+    <div class="ticker" aria-hidden="true" title="Tickers my Market Radar system tracks">
+      <div class="ticker-track" id="tickerTrack"></div>
+    </div>
+
+
     <!-- ABOUT -->
     <section id="about" class="section">
       <div class="container">
@@ -142,15 +153,16 @@
               Dean's List every semester.
             </p>
             <p>
-              My work sits at combining quantitative methods and capital
-              markets &mdash; Bayesian inference, regression diagnostics, financial
-              statement analysis. I also make sure the models used are credible and trustworthy.
+              A lot of what I do sits between quantitative methods and capital
+              markets, so Bayesian inference, regression diagnostics, and financial
+              statement analysis. I also really care about making sure the models I build
+              are credible and can actually be trusted.
             </p>
             <p>
-              I've recently been really into running research projects. From raw FRED pulls and
+              I've been really into running my own research projects lately. From raw FRED pulls and
               PostgreSQL schemas, through diagnostics and convergence checks, to
               published Tableau dashboards and equity research write-ups. The boring
-              stuff is half the work, but its also where most analyses quietly go wrong.
+              stuff is half the work, but it's also where most analyses quietly go wrong.
             </p>
 
             <div class="now-box">
@@ -251,7 +263,7 @@
         <header class="section-head">
           <span class="section-num">/ 03</span>
           <h2 class="section-h"><span class="hash">#</span> selected work</h2>
-          <p class="section-sub">Independent research &mdash; full pipeline, code, and write-up on each.</p>
+          <p class="section-sub">All independent projects. I did the full pipeline, code, and write-up on each one.</p>
         </header>
 
         <!-- 01 FRTB Risk Monitor -->
@@ -270,30 +282,30 @@
                 <span class="tag">Claude API</span>
               </p>
             </div>
-            <span class="project-when">May 2026 &mdash; current</span>
+            <span class="project-when">May 2026 to now</span>
           </header>
 
           <p class="project-desc">
-            A production-grade, automated risk system computing Basel III
-            <em>FRTB</em> Internal-Models-Approach capital &mdash; Value at Risk,
-            Expected Shortfall, stress calibration, and a Standardised-Approach
-            comparison &mdash; on a multi-asset book, served to a
-            <b>live, deployed dashboard</b>.
+            This is the biggest thing I've built. It's an automated risk system that
+            computes Basel III <em>FRTB</em> Internal-Models-Approach capital on a
+            multi-asset book: Value at Risk, Expected Shortfall, stress calibration,
+            and a Standardised-Approach comparison. It all runs on its own and feeds a
+            <b>live dashboard that's actually deployed</b>.
           </p>
 
           <ul class="project-points">
             <li>97.5% Historical-Simulation <b>VaR &amp; Expected Shortfall</b> (with parametric &amp; Monte-Carlo
               Student-t comparisons), stress-calibrated and liquidity-horizon-adjusted, across a 6-asset book
-              (<b>29,000+</b> daily obs, 2007&ndash;26).</li>
+              (<b>29,000+</b> daily obs, 2007-26).</li>
             <li>Computes an <b>Internal-Models vs Standardised-Approach</b> capital charge under the Basel III <b>output
-                floor</b> &mdash; here the SA floor binds at <b>11.2%</b> of notional.</li>
+                floor</b>. Right now the SA floor binds at <b>11.2%</b> of notional.</li>
             <li>Weekly <b>Acerbi-Szekely</b> ES backtest with Kupiec &amp; Christoffersen tests; surfaced a
               <b>54%-of-weeks</b> failure rate revealing the procyclicality of rolling-window ES.</li>
-            <li>Engineered end-to-end: <b>pytest + GitHub Actions CI</b>, a Dockerized stack, and a <b>daily cloud
-                run</b> (Actions cron) whose event detector flags regime shifts, ES spikes &amp; backtest breaches, then
+            <li>Built it end to end: <b>pytest + GitHub Actions CI</b>, a Dockerized stack, and a <b>daily cloud
+                run</b> (Actions cron) whose event detector flags regime shifts, ES spikes, and backtest breaches, then
               auto-publishes <b>Claude-written risk-desk recaps</b> with rendered risk cards.</li>
-            <li>Architected by directing <b>Claude Code (agentic AI)</b>, with every risk function validated against
-              hand-checked results as the human-in-the-loop.</li>
+            <li>I built it by directing <b>Claude Code (an agentic AI tool)</b>, and I hand-checked every risk function
+              against my own results as the human in the loop.</li>
           </ul>
 
           <div class="project-viz horizontal">
@@ -315,7 +327,7 @@
             <div class="metric-card">
               <span class="metric-k">history</span>
               <span class="metric-v">29k+</span>
-              <span class="metric-sub">obs &middot; 2007&ndash;26</span>
+              <span class="metric-sub">obs &middot; 2007-26</span>
             </div>
           </div>
 
@@ -326,13 +338,13 @@
             <figcaption style="margin:.6rem 0 0; font-size:.78rem; color:#9aa0aa;">Reading the four panels:</figcaption>
             <ul
               style="list-style:none; padding:0; margin:.4rem 0 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:.35rem .9rem; font-size:.78rem; color:#9aa0aa; line-height:1.45;">
-              <li><b style="color:#58a6ff;">ES vs VaR</b> &mdash; average tail-day loss vs the loss threshold, over 252
+              <li><b style="color:#58a6ff;">ES vs VaR</b>: average tail-day loss vs the loss threshold, over 252
                 days.</li>
-              <li><b style="color:#58a6ff;">Volatility regime</b> &mdash; shaded background: green calm, amber elevated,
+              <li><b style="color:#58a6ff;">Volatility regime</b>: shaded background, green calm, amber elevated,
                 red stressed.</li>
-              <li><b style="color:#58a6ff;">Asset contribution</b> &mdash; which holding drives today's potential
+              <li><b style="color:#58a6ff;">Asset contribution</b>: which holding drives today's potential
                 bad-day loss.</li>
-              <li><b style="color:#58a6ff;">Backtest (Z2)</b> &mdash; weekly model check; green passes, red
+              <li><b style="color:#58a6ff;">Backtest (Z2)</b>: weekly model check, green passes, red
                 underestimates risk.</li>
             </ul>
           </figure>
@@ -361,14 +373,13 @@
                 <span class="tag">SQLAlchemy</span>
               </p>
             </div>
-            <span class="project-when">May 2026 &mdash; current</span>
+            <span class="project-when">May 2026 to now</span>
           </header>
 
           <p class="project-desc">
-            An automated macro dashboard that quantifies how the official U-3
-            unemployment rate <em>systematically understates</em> labor market
-            stress &mdash; and tracks the leading indicators that actually signal
-            turning points.
+            An automated macro dashboard that shows how much the official U-3
+            unemployment rate <em>understates</em> real labor market stress, and
+            tracks the leading indicators that actually call turning points.
           </p>
 
           <div class="project-body">
@@ -379,9 +390,10 @@
                 Great Recession.</li>
               <li>Built a Python pipeline (FRED + pandas + SQLAlchemy) resampling mixed-frequency series and computing
                 derived metrics live.</li>
-              <li>Scheduled monthly via Windows Task Scheduler &mdash; production database, zero manual refresh.</li>
-              <li>Tracks 8 leading indicators including temp help (<b>−21.4%</b> from peak), quits rate, 10Y&ndash;2Y
-                spread, saving rate.</li>
+              <li>Scheduled monthly through Windows Task Scheduler, so it's a production database with zero manual
+                refresh.</li>
+              <li>Tracks 8 leading indicators including temp help (<b>&minus;21.4%</b> from peak), quits rate, 10Y-2Y
+                spread, and saving rate.</li>
             </ul>
 
             <!-- mini live-snapshot chart -->
@@ -469,22 +481,22 @@
                 <span class="tag">Robust M-Est.</span>
               </p>
             </div>
-            <span class="project-when">Jan &mdash; May 2026</span>
+            <span class="project-when">Jan to May 2026</span>
           </header>
 
           <p class="project-desc">
-            Built and compared three regression families on <b>4,800+ daily S&amp;P 500 returns
-              (2007&ndash;2026)</b> to predict realized volatility and quantify risk persistence
-            &mdash; the empirical backbone of any dynamic VaR framework.
+            I built and compared three regression families on <b>4,800+ daily S&amp;P 500 returns
+              (2007-2026)</b> to predict realized volatility and measure how much risk persists.
+            That persistence question is what sits under any dynamic VaR model.
           </p>
 
           <ul class="project-points">
             <li>Confirmed statistically significant <b>volatility clustering</b> (<code>p &lt; 0.0001</code>); directly
               supports dynamic VaR and portfolio risk frameworks used in industry.</li>
-            <li>Validated via 70/30 train-test split with full diagnostic suite &mdash; heteroscedasticity testing, ACF
-              analysis, Cook's distance influence detection.</li>
-            <li>Compared OLS, WLS, and Robust M-estimation to surface which assumptions hold once you stop pretending
-              returns are i.i.d. normal.</li>
+            <li>Validated on a 70/30 train-test split with a full diagnostic suite: heteroscedasticity testing, ACF
+              analysis, and Cook's distance for influence.</li>
+            <li>Compared OLS, WLS, and Robust M-estimation to see which assumptions actually hold once you stop
+              pretending returns are i.i.d. normal.</li>
           </ul>
 
           <div class="project-viz horizontal">
@@ -495,7 +507,7 @@
             </div>
             <div class="metric-card">
               <span class="metric-k">window</span>
-              <span class="metric-v">2007&ndash;26</span>
+              <span class="metric-v">2007-26</span>
               <span class="metric-sub">19 yrs &middot; 2 regimes</span>
             </div>
             <div class="metric-card">
@@ -509,6 +521,14 @@
               <span class="metric-sub">train / test</span>
             </div>
           </div>
+
+          <figure class="project-shot">
+            <img src="assets/spy-volatility.png" loading="lazy"
+              alt="Lagged-risk coefficient across OLS, WLS, and robust M-estimation with 95% confidence intervals, plus fit statistics" />
+            <figcaption><b>Persistence, three ways.</b> The lagged-risk coefficient stays significant under
+              every estimator. WLS lifts it to 0.39 once you correct for heteroscedasticity, and robust M-estimation
+              trims it to 0.10 once you downweight the outliers.</figcaption>
+          </figure>
 
           <div class="project-links">
             <a href="https://github.com/marksguo/SPY-Volatility-Modeling" target="_blank" rel="noopener">
@@ -531,13 +551,13 @@
                 <span class="tag">Diagnostics</span>
               </p>
             </div>
-            <span class="project-when">Sep 2025 &mdash; Mar 2026</span>
+            <span class="project-when">Sep 2025 to Mar 2026</span>
           </header>
 
           <p class="project-desc">
-            Implemented a hierarchical Bayesian model from scratch with a custom
-            Metropolis-Hastings sampler &mdash; not a library call &mdash; to estimate
-            group-level probabilities and quantify uncertainty rigorously.
+            I wrote a hierarchical Bayesian model from scratch, including a custom
+            Metropolis-Hastings sampler I coded myself instead of calling a library,
+            to estimate group-level probabilities and put real numbers on the uncertainty.
           </p>
 
           <ul class="project-points">
@@ -545,8 +565,8 @@
               rates.</li>
             <li>Confirmed convergence via Gelman-Rubin diagnostics (<code>PSRF = 1.0</code>); effective sample sizes
               exceeding <b>26,000</b> across all chains.</li>
-            <li>Delivered findings with 95% credible intervals and actionable business recommendations translated for
-              non-technical stakeholders.</li>
+            <li>Reported everything with 95% credible intervals and turned it into plain recommendations someone
+              non-technical could actually use.</li>
           </ul>
 
           <div class="project-viz horizontal">
@@ -571,6 +591,14 @@
               <span class="metric-sub">all chains</span>
             </div>
           </div>
+
+          <figure class="project-shot">
+            <img src="assets/bayesian.png" loading="lazy"
+              alt="Four Metropolis-Hastings chains mixing, the resulting posterior density with 95% credible interval, and convergence diagnostics" />
+            <figcaption><b>Actual convergence.</b> Four chains from spread-out starts all settle onto the same
+              posterior, Gelman-Rubin lands at 1.00, and there are tens of thousands of effective samples. I wrote
+              the sampler by hand, so every diagnostic is earned.</figcaption>
+          </figure>
         </article>
 
         <!-- 05 Amazon DCF -->
@@ -579,7 +607,7 @@
           <header class="project-head">
             <div class="project-headl">
               <span class="project-num">05 / valuation</span>
-              <h3>Amazon, Inc. &mdash; DCF &amp; Equity Valuation</h3>
+              <h3>Amazon, Inc. DCF &amp; Equity Valuation</h3>
               <p class="project-tags">
                 <span class="tag">Excel</span>
                 <span class="tag">DCF</span>
@@ -587,21 +615,29 @@
                 <span class="tag">Sensitivity</span>
               </p>
             </div>
-            <span class="project-when">Jan &mdash; Apr 2025</span>
+            <span class="project-when">Jan to Apr 2025</span>
           </header>
 
           <p class="project-desc">
-            Built a <b>5-year pro forma model</b> and DCF valuation using
-            CAPM-derived WACC across multiple macroeconomic scenarios; stress-tested
-            beta, WACC, and terminal growth via sensitivity tables. Closed with a
-            structured equity research report and a supported &ldquo;Hold&rdquo;
-            recommendation.
+            I built a <b>5-year pro forma model</b> and a DCF valuation with a
+            CAPM-derived WACC, then ran it across a few macro scenarios and
+            stress-tested beta, WACC, and terminal growth in sensitivity tables.
+            It ends in a full equity research report with a &ldquo;Hold&rdquo; I can
+            actually defend.
           </p>
           <ul class="project-points">
             <li>Trend, common-size, and ratio analysis across profitability, liquidity, leverage, and default risk.</li>
-            <li>Scenario-conditional WACC and terminal growth bands to make the recommendation robust to the macro
-              assumption.</li>
+            <li>Scenario-conditional WACC and terminal growth bands so the call holds up no matter which macro
+              assumption you believe.</li>
           </ul>
+
+          <figure class="project-shot">
+            <img src="assets/amazon-dcf.png" loading="lazy"
+              alt="Amazon five-year unlevered free cash flow projection with present values, and a WACC-by-terminal-growth sensitivity heatmap of implied share price" />
+            <figcaption><b>Where the Hold comes from.</b> Discounting five years of unlevered FCF plus a Gordon
+              terminal value gives an implied $188 against the $219 reference. The heatmap shows how fast that flips
+              across WACC and terminal growth, and the base case is boxed.</figcaption>
+          </figure>
         </article>
 
         <!-- 06 Endowment -->
@@ -618,17 +654,105 @@
                 <span class="tag">Faculty Research</span>
               </p>
             </div>
-            <span class="project-when">Feb &mdash; Apr 2024</span>
+            <span class="project-when">Feb to Apr 2024</span>
           </header>
           <p class="project-desc">
-            Collaborative research with <b>Prof. Michael Rizzo</b> across
-            <b>11 universities</b>. Identified a significant correlation between
-            endowment-per-student and U.S. News rankings &mdash; presented to
-            Economics faculty with data-driven conclusions on institutional
-            resource-allocation tradeoffs.
+            Research I did with <b>Prof. Michael Rizzo</b> across
+            <b>11 universities</b>. We found a significant correlation between
+            endowment-per-student and U.S. News rankings, and I presented it to
+            Economics faculty with data-backed conclusions about how schools trade off
+            where their resources go.
           </p>
         </article>
 
+      </div>
+    </section>
+
+
+    <!-- IN PROGRESS -->
+    <section id="progress" class="section alt">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-num">/ 04</span>
+          <h2 class="section-h"><span class="hash">#</span> in progress</h2>
+          <p class="section-sub">Automated systems I run every day and keep improving. All live, and all mine.</p>
+        </header>
+
+        <!-- Featured: Market Radar -->
+        <article class="project" style="--accent: #6ec5a8; --accent-soft: rgba(110,197,168,.14);">
+          <div class="project-glow"></div>
+          <header class="project-head">
+            <div class="project-headl">
+              <span class="project-num">live / market-radar</span>
+              <h3>Market Radar</h3>
+              <p class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Gemini API</span>
+                <span class="tag">RSS + EDGAR 13F</span>
+                <span class="tag">GitHub Actions</span>
+                <span class="tag">Paper Portfolio</span>
+              </p>
+            </div>
+            <span class="project-when"><span class="live-badge"><span class="pulse-dot mini"></span> live</span></span>
+          </header>
+
+          <p class="project-desc">
+            An automated research desk that reads the market every day. It pulls market-moving news and 13F filings,
+            has an LLM score the <em>first- and second-order</em> stock impact, and sizes a conviction-weighted
+            <b>$1M paper book</b> under real risk controls. Then it <b>grades its own calls</b> against sector
+            benchmarks and feeds what it learns back into a weekly loop.
+          </p>
+
+          <ul class="project-points">
+            <li>Ingests CNBC / MarketWatch / Google News plus <b>EDGAR 13F</b> filings from 16 marquee investors, scores
+              relevance, and analyzes the top names on a paced daily schedule.</li>
+            <li>Sizes a <b>core-satellite book</b> with per-name and per-sector caps, volatility tilting, and a lateness
+              gate so it can't chase a move that already happened.</li>
+            <li><b>Relative-return grading</b>: every call is scored on whether it beat its sector ETF, not just the
+              tape. Beating your sector is the only thing that actually makes alpha.</li>
+            <li>Runs unattended on <b>GitHub Actions</b>, emails a ranked report twice a day, and rebalances the paper
+              book weekly.</li>
+          </ul>
+
+          <figure class="project-shot">
+            <img src="assets/market-radar.png" loading="lazy"
+              alt="Market Radar live paper book: allocation by sleeve donut and top holdings by market value" />
+            <figcaption><b>The live book.</b> A sector-capped $1M paper portfolio, marked to market and graded
+              against itself. The AI-hardware names are capped around 60%, and a fixed sleeve of VOO, XLV, XLF, and
+              XLE keeps the whole thing from turning into a single-theme bet.</figcaption>
+          </figure>
+
+          <div class="project-links">
+            <span class="link-static"><span class="pulse-dot mini"></span> live &middot; runs on GitHub Actions
+              &middot; emails twice daily</span>
+          </div>
+        </article>
+
+        <!-- other live systems -->
+        <div class="live-grid">
+          <article class="live-card" style="--accent: #8b80ff;">
+            <div class="live-head">
+              <span class="live-badge"><span class="pulse-dot mini"></span> live</span>
+              <span class="live-k">/ intern-tracker</span>
+            </div>
+            <h3>Internship Tracker</h3>
+            <p>Every morning at 8AM it scans <b>50 firms'</b> career pages for new Summer 2027 quant &amp; finance
+              postings and emails me only the diffs, so I never miss a drop and never have to scroll a careers page by
+              hand.</p>
+            <p class="live-stack">Python &middot; GitHub Actions &middot; cron &middot; SMTP</p>
+          </article>
+
+          <article class="live-card" style="--accent: #e8b563;">
+            <div class="live-head">
+              <span class="live-badge"><span class="pulse-dot mini"></span> live</span>
+              <span class="live-k">/ ai-radar</span>
+            </div>
+            <h3>AI Radar</h3>
+            <p>A daily ~7AM digest of new agentic tools and AI-dev news, <b>pulled together by an LLM</b> into a ranked
+              email. It's how I keep up with a field that moves faster than any newsletter can.</p>
+            <p class="live-stack">Python &middot; Gemini &middot; GitHub Actions</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -637,7 +761,7 @@
     <section id="skills" class="section">
       <div class="container">
         <header class="section-head">
-          <span class="section-num">/ 04</span>
+          <span class="section-num">/ 05</span>
           <h2 class="section-h"><span class="hash">#</span> stack &amp; methods</h2>
         </header>
 
@@ -709,7 +833,7 @@
     <section id="experience" class="section alt">
       <div class="container">
         <header class="section-head">
-          <span class="section-num">/ 05</span>
+          <span class="section-num">/ 06</span>
           <h2 class="section-h"><span class="hash">#</span> experience</h2>
         </header>
 
@@ -722,7 +846,7 @@
                 <p class="job-role">Junior Financial &amp; Operations Analyst</p>
               </div>
               <div class="job-meta">
-                <span>Sep 2017 &mdash; Jul 2025</span>
+                <span>Sep 2017 to Jul 2025</span>
                 <span>Charlotte, NC</span>
               </div>
             </header>
@@ -731,7 +855,7 @@
                 expansion and data-driven process improvements across procurement, fulfillment, and labor.</li>
               <li>Monitored food cost ratios against a ~32% COGS target; identified <b>$10K+ in annual ingredient
                   savings</b> through vendor renegotiation and waste reduction across $30K+ in monthly procurement.</li>
-              <li>Built a <b>2,000-cell Excel order &amp; financial tracking system</b> integrated with DoorDash &mdash;
+              <li>Built a <b>2,000-cell Excel order &amp; financial tracking system</b> integrated with DoorDash,
                 reconciling $125K+ in monthly revenue across 150+ daily orders.</li>
               <li>Prepared monthly P&amp;L summaries (revenue, ~28% labor, food cost) and presented to ownership to
                 support operational and budgetary decisions.</li>
@@ -747,16 +871,16 @@
             <header class="job-head">
               <div>
                 <h3>Tien Ren Cultural &amp; Educational Foundation</h3>
-                <p class="job-role">Lecturer &amp; Event Organizer (2021&ndash;present) &middot; Assistant Lecturer
-                  (2019&ndash;2021)</p>
+                <p class="job-role">Lecturer &amp; Event Organizer (2021 to present) &middot; Assistant Lecturer
+                  (2019-2021)</p>
               </div>
               <div class="job-meta">
-                <span>Summer 2015 &mdash; current</span>
+                <span>Summer 2015 to now</span>
                 <span>Indian Trail, NC</span>
               </div>
             </header>
             <ul class="project-points">
-              <li>Delivered <b>30+ educational sessions</b> to ~1,000 youth (ages 14&ndash;20).</li>
+              <li>Delivered <b>30+ educational sessions</b> to ~1,000 youth (ages 14-20).</li>
               <li>Organized 3 annual volunteer events at <b>Second Harvest Food Bank of Metrolina</b>.</li>
             </ul>
           </article>
@@ -769,7 +893,7 @@
     <section id="contact" class="section contact">
       <div class="container">
         <header class="section-head">
-          <span class="section-num">/ 06</span>
+          <span class="section-num">/ 07</span>
           <h2 class="section-h"><span class="hash">#</span> let's talk</h2>
         </header>
 
@@ -834,6 +958,13 @@
       <span class="footer-sub">handcrafted &middot; no frameworks &middot; built may 2026</span>
     </div>
   </footer>
+
+  <button class="to-top" id="toTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
+  </button>
 
   <script src="script.js"></script>
 </body>
